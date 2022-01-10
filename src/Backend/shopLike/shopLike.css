@@ -1,0 +1,54 @@
+@media (max-width: 576px) {
+
+
+
+    .button-like {
+        padding-left: 15px !important;
+    }
+
+    .col-like {
+        width: 10px;
+    }
+
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+
+    .col-like {
+        width: 10px;
+    }
+
+
+}
+
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+    col.col-like {
+        width: 10px !important;
+    }
+
+}
+
+@media (min-width: 991px) and (max-width: 1200px) {
+
+    .col-like {
+        width: 15px;
+    }
+
+    .button-like {
+        padding-left: 13px !important;
+        font-weight: normal !important;
+    }
+
+    .form-input {
+        border-bottom: 1px solid grey;
+    }
+}
+
+@media (min-width: 1200px) {
+
+    .col-like {
+        width: 15px;
+    }
+}

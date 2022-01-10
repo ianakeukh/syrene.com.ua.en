@@ -1,0 +1,753 @@
+.navbar-toggler-icon  {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important;
+}
+
+.profile-menu-info{
+    display: none;
+}
+
+.profile-menu {
+    background: #fff;
+    padding: 10px 15px;
+    /*transform: translateX(-10px);*/
+    transform: translate(-10px, -10px);
+}
+.profile-icon:hover .profile-menu-info{
+    display: block;
+}
+
+.shop-nav-first {
+    height: 56px !important;
+}
+
+.navbar-bg {
+    background-color: rgb(66,0,58) !important;
+}
+
+.modal-dialog.modal-bin {
+    display: block !important;
+}
+
+.modal-dialog {
+    max-width: 680px !important;
+}
+
+.modal-bin .modal-content {
+    width: 680px !important;
+}
+
+div.modal-dialog.modal-autorization {
+    width: 400px !important;
+    margin: 0;
+    justify-content: center;
+    display: block;
+}
+
+.modal-autorization .modal-content {
+    width: 400px !important;
+}
+
+
+
+
+p.adr {
+    font-size: 15px;
+    font-weight: 100 !important;
+    line-height: 15px !important;
+}
+
+
+.shop-logo {
+    font-size: 65px;
+}
+
+
+.shop-logo-div {
+    padding: 65px 65px 30px;
+}
+
+.shop-logo-img {
+    font-size: 75px;
+    font-weight: 400;
+    height: 85px;
+    letter-spacing: 6px;
+    width: 330px;
+}
+
+.shop-logo-text {
+    font-size: 21px;
+    font-weight: 200;
+    font-stretch: 30px;
+    letter-spacing: 3px;
+    width: 21rem !important;
+    text-align: center;
+}
+
+.btn-like {
+    background-color: #fccccc !important;
+    color: #7f249c !important;
+}
+
+.btn-bk {
+    text-shadow: 1px 0px 0px ;
+    width:  75px !important;
+    height: 85px !important;
+    outline: none;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+
+.btn-bk:focus {
+    outline: 0;
+    outline-offset: 0;
+}
+
+.btn-bk img {
+    width: 45px;
+}
+
+i.fa-search {
+    font-size: 30px;
+    color: lightgrey;
+}
+
+.dropdownmenu {
+    margin: auto;
+    top: 0;
+    left: 0;
+    align-content: center;
+    justify-content: center;
+}
+
+.btn-x {
+    transform: translate(215px, -6px);
+    background-color: transparent !important;
+    color: black;
+    width: 35px !important;
+    height: 35px;
+}
+
+
+.btn-s {
+    transform: translate(185px, -6px);
+    background-color: transparent !important;
+    color: black;
+    width: 35px !important;
+    height: 45px;
+}
+
+.btn-x:focus {
+    outline: none;
+    border: none;
+}
+
+.btn-x:hover {
+    color: black;
+}
+
+.heart-icon {
+    font-size: 30px;
+    color: lightgrey;
+}
+
+
+input.input-search {
+    width: 400px !important;
+    height: 35px !important;
+}
+
+.nav-block {
+    width: 225px;
+    justify-content: space-between;
+    display: flex;
+    margin: auto;
+}
+
+.nav-block-btn {
+    width: 50px !important;
+}
+
+
+.profile-menu-block {
+    width: 50px !important;
+}
+
+
+.profile-menu-block:hover .profile-menu-info {
+    display: block !important;
+    position: absolute !important;
+    background: #a74eb6 !important;
+    width: 100px;
+}
+
+.profile-menu-block:hover .profile-menu {
+    display: block !important;
+    position: absolute !important;
+    background: #a74eb6 !important;
+    padding: 10px;
+    z-index: 500;
+}
+
+.profile-menu-info {
+  display: none;
+}
+
+#pm-info {
+
+}
+
+.profile-menu {
+    display: none;
+
+}
+
+.pm-link {
+    color: #7a1291 !important;
+}
+
+.pm-link:hover {
+   color: white !important;
+}
+
+.pr-menu-link {
+    background-color: #eaadf5 !important;
+    width: 128px !important;
+    height: 200px !important;
+}
+
+.pr-menu-link {
+    border: 2px solid #d77af6;
+}
+
+.shop-nav-second {
+    z-index: 100 !important;
+}
+
+
+a.nav-text:hover {
+    color: #af28cc !important;
+}
+
+a.tell:hover {
+    color: #af28cc !important;
+}
+
+a.icon:hover {
+    color: #af28cc !important;
+}
+
+i.far.fa-envelope:hover {
+    color: #af28cc !important;
+}
+
+i.fa.fa-user-circle:hover {
+    color: #af28cc !important;
+}
+
+
+
+
+@media (max-width: 576px) {
+    .shop-nav-first {
+        display: none;
+    }
+
+    .shop-nav-second {
+        background-color: rgb(66,0,58) !important;
+        border: 0px;
+        height: 35px;
+    }
+
+
+    button.navbar.navbar-light.navbar-toggler {
+        color: white !important;
+        padding-bottom: 10px !important;
+    }
+
+
+
+    #navbarCollapse1 {
+        background-color: #a372a9 !important;
+        z-index: 100;
+
+    }
+
+    .shop-logo-img {
+        font-weight: 400;
+        height: 55px;
+        letter-spacing: 6px;
+        padding-left: 3rem;
+    }
+
+    .shop-logo-text {
+        font-size: 0.75rem;
+        margin-left: 2.8rem;
+        padding-left: 3rem;
+    }
+
+    .shop-logo {
+        font-size: 2.4rem;
+    }
+
+    .shop-bg-nav, .shop-logo-div{
+        height: 110px;
+    }
+
+    .nav-text {
+        font-size: 1rem;
+        padding-right: 15px !important;
+    }
+
+    .btn-bk, #text {
+        font-size: 0.6rem !important;
+        height: 2.6rem !important;
+        width: 40px !important;
+    }
+
+    .btn-like, #text {
+        font-size: 0.3rem !important;
+        height: 2.6rem !important;
+        width: 45px !important;
+    }
+
+    .fb-icon {
+        font-size: 15px !important;
+        transform: translateY(-3px);
+    }
+
+    .insta-icon {
+        font-size: 17px !important;
+        transform: translateY(-2px);
+    }
+
+    .email-icon {
+        font-size: 17px !important;
+        transform: translateY(-2px);
+    }
+
+    .tgl-item {
+        font-size: 25px !important;
+    }
+
+    i.fa-search {
+        width: 65px;
+        font-size: 30px;
+        color: lightgrey;
+    }
+
+    .heart-icon {
+        font-size: 30px !important;
+        padding-right: 15px !important;
+    }
+
+    i.fa-search, .bin-img {
+        font-size: 20px !important;
+        width: 30px !important;
+    }
+
+
+    .nav-block {
+        justify-content: space-between;
+        display: flex;
+        margin: auto;
+    }
+
+
+
+    div.modal-dialog {
+        width: 475px !important;
+        display: block !important;
+    }
+
+    div.modal-dialog.modal-autorization {
+        width: 400px !important;
+        justify-content: center;
+        display: block;
+
+    }
+
+    .modal-autorization .modal-content {
+        width: 400px !important;
+    }
+
+    .modal-dialog {
+        max-width: 475px !important;
+    }
+
+    .modal-bin .modal-content {
+        width: 475px !important;
+    }
+
+
+    .btn-x {
+        transform: translate(50px, -10px) !important;
+        background-color: transparent !important;
+        color: black;
+        width: 35px !important;
+        height: 35px;
+    }
+
+    .btn-s {
+        transform: translate(95px, -6px);
+        background-color: transparent !important;
+        color: black;
+        width: 35px !important;
+        height: 45px;
+    }
+
+    .modal-content {
+        max-width: 350px !important;
+    }
+
+    div.modal-dialog {
+        width: 300px !important;
+        display: block !important;
+    }
+
+    div.modal-dialog.modal-autorization {
+        width: 300px !important;
+        justify-content: center;
+        display: block;
+
+    }
+
+    .modal-autorization .modal-content {
+        width: 300px !important;
+    }.profile-menu-block:hover .profile-menu-info {
+         display: block !important;
+         position: absolute !important;
+         background: #a74eb6 !important;
+         width: 100px;
+     }
+
+    .profile-menu-block:hover .profile-menu {
+        display: block !important;
+        position: absolute !important;
+        background: #a74eb6 !important;
+        padding: 10px;
+    }
+
+    .profile-menu-info {
+        display: none;
+    }
+
+    .profile-menu {
+        display: none;
+    }
+
+
+
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+    .shop-nav-first {
+        display: none;
+    }
+
+    .shop-nav-second  {
+        display: block;
+        background-color: rgb(66,0,58) !important;
+        border: 0px;
+        height: 37px;
+        z-index: 10 !important;
+    }
+
+    .shop-logo {
+        font-size: 2.5rem;
+    }
+
+    .shop-logo-text {
+        font-size: 0.75rem;
+        margin-left: 2.8rem;
+        padding-left: 22px;
+    }
+
+    .nav-text {
+        font-size: 1rem !important;
+        padding-right: 15px !important;
+    }
+
+    .nav-icon {
+        font-size: 1rem;
+    }
+
+    button.navbar.navbar-light.navbar-toggler {
+        color: white !important;
+        padding-bottom: 10px !important;
+    }
+
+
+    #navbarCollapse1 {
+        background-color: #a372a9 !important;
+        z-index: 100;
+
+    }
+
+    .shop-logo-img {
+        font-weight: 400;
+        height: 55px;
+        letter-spacing: 6px;
+        padding-left: 20px;
+    }
+
+
+
+    .fb-icon {
+        font-size: 15px !important;
+        transform: translateY(-3px);
+    }
+
+    .insta-icon {
+        font-size: 17px !important;
+        transform: translateY(-2px);
+    }
+
+    .email-icon {
+        font-size: 17px !important;
+        transform: translateY(-2px);
+    }
+
+    .tgl-item {
+        font-size: 15px !important;
+    }
+
+    .heart-icon {
+        font-size: 45px !important;
+        width: 25px !important;
+    }
+
+    i.fa-search, .bin-img {
+        font-size: 20px !important;
+        width: 30px !important;
+    }
+
+    input.form-search {
+        width: 100px !important;
+        height: 35px !important;
+    }
+
+    input.input-search {
+        width: 400px !important;
+        height: 35px !important;
+    }
+
+    .nav-block {
+        width: 150px;
+        justify-content: space-between;
+        display: flex;
+        margin: auto;
+    }
+
+    .btn-s {
+        transform: translate(105px, -6px);
+        background-color: transparent !important;
+        color: black;
+        width: 35px !important;
+        height: 45px;
+    }
+
+    .btn-x {
+        transform: translate(130px, -10px) !important;
+        background-color: transparent !important;
+        color: black;
+        width: 35px !important;
+        height: 35px;
+    }
+
+
+
+}
+
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .shop-nav-first {
+        display: none;
+    }
+
+    .shop-nav-second {
+        display: block;
+        background-color: rgb(66,0,58) !important;
+        border: 0px;
+        height: 50px;
+    }
+
+
+    .shop-logo {
+        font-size: 3.2rem;
+    }
+
+    .shop-logo-text {
+        font-size: 1rem;
+        margin-left: 2.8rem;
+        padding-left: 100px !important;
+    }
+
+    .nav-icon {
+        font-size: 1.2rem;
+    }
+
+    button.navbar.navbar-light.navbar-toggler {
+        color: white !important;
+        padding-bottom: 10px !important;
+    }
+
+
+    #navbarCollapse1 {
+        background-color: #a372a9 !important;
+        z-index: 100;
+
+    }
+
+    .shop-logo-img {
+        font-weight: 400;
+        height: 70px;
+        letter-spacing: 6px;
+        padding-left: 70px;
+    }
+
+
+    .fb-icon {
+        font-size: 15px !important;
+        transform: translateY(-3px);
+    }
+
+    .insta-icon {
+        font-size: 17px !important;
+        transform: translateY(-2px);
+    }
+
+    .email-icon {
+        font-size: 17px !important;
+        transform: translateY(-2px);
+    }
+
+    .nav-text {
+        font-size: 10rem !important;
+        padding-right: 15px !important;
+    }
+
+    .tgl-item {
+        font-size: 15px !important;
+    }
+
+    .heart-icon {
+        font-size: 30px;
+    }
+
+    input.input-search {
+        width: 400px !important;
+        height: 35px !important;
+    }
+
+    .btn-circle {
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 991px) and (max-width: 1200px) {
+
+    .nav-text {
+        font-size: 0.8rem;
+    }
+
+    .shop-nav-second {
+        display: none;
+    }
+
+    .shop-logo-img {
+        font-size: 75px;
+        font-weight: 400;
+        height: 85px;
+        letter-spacing: 6px;
+        width: 330px;
+    }
+
+    .shop-logo-text {
+        width: 100% !important;
+    }
+
+    .btn-bk, #text {
+        font-size: 1rem !important;
+    }
+
+    .btn-like, #text {
+        font-size: 1rem !important;
+    }
+
+    .fb-icon {
+        font-size: 15px !important;
+        transform: translateY(-3px);
+    }
+
+    .insta-icon {
+        font-size: 17px !important;
+        transform: translateY(-2px);
+    }
+
+    .email-icon {
+        font-size: 17px !important;
+        transform: translateY(-2px);
+    }
+
+    .heart-icon {
+        font-size: 30px;
+    }
+
+    input.input-search {
+        width: 400px !important;
+        height: 35px !important;
+    }
+
+    .modal-dialog, .modal-body {
+        max-width: 680px !important;
+    }
+
+    .modal-bin .modal-content {
+        width: 680px !important;
+    }
+}
+
+
+@media (min-width: 1200px) {
+
+    .shop-nav-second {
+        display: none;
+    }
+
+    .shop-logo-img {
+        font-size: 75px;
+        font-weight: 400;
+        height: 85px;
+        letter-spacing: 6px;
+        width: 330px;
+    }
+
+    .shop-logo-text {
+        width: 100% !important;
+    }
+
+    .btn-bk, #text {
+        font-size: 1rem !important;
+    }
+
+    .btn-like, #text {
+        font-size: 1rem !important;
+    }
+
+    .fb-icon {
+        font-size: 15px !important;
+        transform: translateY(-3px);
+    }
+
+    .insta-icon {
+        font-size: 17px !important;
+        transform: translateY(-2px);
+    }
+
+    .email-icon {
+        font-size: 17px !important;
+        transform: translateY(-2px);
+    }
+
+
+}

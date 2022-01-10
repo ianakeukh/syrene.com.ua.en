@@ -1,0 +1,36 @@
+    .shop-upload-logo {
+        font-size: 4rem;
+    }
+
+    .shop-upload-slogan {
+        letter-spacing: 0.35rem;
+    }
+
+    .shop-upload {
+        background-color: #efc0f6 !important;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .shop-top {
+        width: 400px;
+        height: 33.3% !important;
+        transform: translate(0rem, -10rem);
+    }
+
+    .shop-upload-img-top {
+        transform: translate(0rem, -10rem);
+        height: 33.3% !important;
+    }
+
+    .shop-upload-img-bottom{
+        transform: translate(0rem, -10rem);
+        height: 33.3% !important;
+    }
+
+
+@media (min-width: 600px) {
+    .shop-upload {
+        display: none;
+    }
+}

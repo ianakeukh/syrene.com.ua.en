@@ -1,0 +1,285 @@
+/*footer*/
+
+.shop-foot {
+    font-size: 3.5rem;
+    letter-spacing: 6px;
+    width: 250px;
+}
+
+.shop-slogan {
+    font-size: 1.2rem !important;
+    letter-spacing: 1.5px;
+    text-align: left;
+    margin-bottom: 42px;
+}
+
+footer.page-footer {
+    margin: 0px !important;
+    padding: 0px !important;
+    background: #21001c !important;
+    overflow: hidden;
+
+}
+
+.footer-copyright {
+    height: 50px;
+    background-color: rgb(66,0,58) !important;
+}
+
+.row {
+    padding: 45px 0px 0px 0px;
+    height: 100%;
+}
+
+.col-md-3 {
+    height: 100%;
+}
+
+
+p.logo-text {
+    margin: 0 !important;
+    font-size: 1rem;
+    float: right;
+    text-align: right;
+}
+
+.logo-text-cr {
+    padding-top: 10px;
+    float: right;
+    font-size: 0.7rem;
+}
+
+
+ol li {
+    height: 1px !important;
+}
+
+ul {
+    display: list-item;
+    text-decoration: none;
+    list-style-type: none;
+    padding-left: 50px;
+}
+
+
+li {
+    padding: 5px 0px 5px 0px;
+}
+
+h5.title {
+    padding: 20px 0px 15px 50px;
+}
+
+.footer-nav {
+    margin-left: 45px;
+
+}
+
+.footer-ic {
+    display: inline-flex;
+    flex-direction: row;
+    margin-top: 5px !important;
+}
+
+i.footer-icons {
+    color: #ad1457;
+    font-size: 25px;
+    width: 100px;
+}
+
+
+
+@media (max-width: 576px) {
+
+    .shop-foot {
+        font-size: 1.9rem !important;
+    }
+
+    .shop-slogan {
+        font-size: 0.67rem !important;
+        text-align: right;
+    }
+
+    .footer-nav a {
+        font-size: 0.7rem !important;
+    }
+
+    .footer-nav  {
+        margin-left: 2.2rem !important;
+    }
+
+    p.logo-text {
+        font-size: 1.2rem;
+    }
+
+    .logo-text-cr {
+        font-size: 0.6rem;
+    }
+
+    h5.title {
+        font-size: 1.2rem !important;
+    }
+
+
+    li.list-unstyled a {
+        font-size: 0.8rem !important;
+    }
+
+    p.logo-text {
+        font-size: 0.7rem;
+    }
+
+    i.fab, i.far {
+        font-size: 1.1rem;
+    }
+
+    i.fa.fa-phone-alt {
+        font-size: 0.8rem !important;
+    }
+
+    footer.page-footer {
+        margin: 0px !important;
+        padding: 0px !important;
+        background: rgba(33, 4, 20, 0.58);
+        overflow: hidden;
+    }
+
+    .shop-salon {
+        font-size: 0.6rem;
+    }
+
+    .image-bordo {
+        float: right;
+        margin-bottom: 25px;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+    .shop-foot {
+        font-size: 1.7rem;
+        text-align: left;
+    }
+
+    .shop-slogan {
+        font-size: 0.63rem !important;
+    }
+
+    .footer-nav a {
+        font-size: 0.8rem !important;
+    }
+
+    .footer-nav  {
+        margin-left: 2.2rem !important;
+    }
+
+    p.logo-text {
+        font-size: 0.8rem;
+    }
+
+    .logo-text-cr {
+        font-size: 0.5rem;
+    }
+
+    h5.title {
+        font-size: 1rem;
+    }
+
+
+    li.list-unstyled a {
+        font-size: 0.7rem !important;
+    }
+
+    p.logo-text {
+        font-size: 0.6rem;
+    }
+
+    i.fab, i.far {
+        font-size: 1rem;
+    }
+
+    i.fa.fa-phone-alt {
+        font-size: 0.7rem !important;
+    }
+
+    footer.page-footer {
+        margin: 0px !important;
+        padding: 0px !important;
+        background: rgba(33, 4, 20, 0.58);
+        overflow: hidden;
+    }
+
+    .shop-salon {
+        font-size: 0.7rem;
+    }
+
+    .image-bordo {
+        float: right;
+        margin-bottom: 25px;
+    }
+}
+
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .shop-foot {
+        font-size: 2.4rem;
+    }
+
+    .shop-slogan {
+        font-size: 0.84rem !important;
+    }
+
+    .footer-nav a {
+        font-size: 0.8rem !important;
+    }
+
+    p.logo-text {
+        font-size: 0.8rem;
+    }
+
+    li.list-unstyled a {
+        font-size: 0.8rem !important;
+    }
+
+    .image-bordo {
+        width: 200px !important;
+    }
+
+}
+
+@media (min-width: 991px) and (max-width: 1200px) {
+    .shop-foot {
+        font-size: 3.5rem;
+    }
+
+    .shop-slogan {
+        font-size: 1.225rem !important;
+    }
+
+    .logo-text-cr {
+        font-size: 0.8rem;
+    }
+
+    .image-bordo {
+        width: 250px !important;
+    }
+}
+
+
+@media (min-width: 1200px) {
+    .shop-foot {
+        font-size: 4rem;
+        height: 85px !important;
+    }
+
+    .shop-slogan {
+        font-size: 1.45rem !important;
+    }
+
+    .logo-text-cr {
+        font-size: 0.8rem;
+    }
+
+    .image-bordo {
+        width: 300px;
+    }
+}

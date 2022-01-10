@@ -1,0 +1,37 @@
+.info-pain {
+    border: 1px solid rgba(128, 128, 128, 0.29);
+}
+
+.nav-links {
+    border-right: 2px solid lightgrey;
+}
+
+.order-item {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: bolder;
+}
+
+.shop-bin {
+    width: 300px;
+    display: block;
+    position: relative;
+    justify-content: right!important;
+    margin: 15px auto;
+}
+
+.btn-pay {
+    background-color: #aa66cc !important;
+}
+
+
+
+
+
+@media (max-width: 576px) {
+    li.nav-item {
+        font-size: 0.5rem !important;
+        border: 1px solid rgba(128, 128, 128, 0.51);
+    }
+
+}

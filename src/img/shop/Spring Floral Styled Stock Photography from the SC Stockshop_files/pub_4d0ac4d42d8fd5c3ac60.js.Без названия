@@ -1,0 +1,8 @@
+// Last edit: Mon, 04 May 20 17:22:25 -0400
+_rfsn_tracker.load_settings({
+	version : 2.0,
+	base_url : 'https://scstockshop.refersion.com/',
+	xdomains: [],
+	verbose: false,
+	is_loaded: true
+})

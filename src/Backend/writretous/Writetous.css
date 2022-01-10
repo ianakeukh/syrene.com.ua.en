@@ -1,0 +1,72 @@
+.contact-card {
+    height: 500px !important;
+    width: 700px;
+}
+
+.col-contact {
+    height: 70px!important;
+}
+
+#form-contact-name, #form-contact-email, #form-contact-phone, #form-contact-company {
+    width: 300px !important;
+    height: 50px !important;
+}
+
+#form-contact-message {
+    width: 100% !important;
+    height: 50px !important;
+}
+
+.contact-text {
+    font-size: 1.2rem !important;
+}
+
+
+@media (max-width: 576px) {
+    .contact-card {
+        height: 470px !important;
+        width: 310px !important;
+        border-radius: 5px;
+    }
+
+    #form-contact-name, #form-contact-email, #form-contact-phone, #form-contact-company {
+        width: 120px !important;
+    }
+
+
+}
+
+
+
+@media (min-width: 576px) and (max-width: 768px) {
+    .contact-card {
+        height: 500px !important;
+        width: 550px !important;
+    }
+
+    #form-contact-name, #form-contact-email, #form-contact-phone, #form-contact-company {
+        width: 220px !important;
+    }
+
+}
+
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .contact-text {
+        font-size: 1.5rem;
+    }
+}
+
+
+@media (min-width: 991px) and (max-width: 1200px) {
+    .contact-text {
+        font-size: 1.5rem;
+    }
+}
+
+
+@media (min-width: 1200px) {
+    .contact-text {
+        font-size: 1.5rem;
+    }
+}

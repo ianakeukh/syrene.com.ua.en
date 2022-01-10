@@ -1,0 +1,68 @@
+
+.shop-brands-item {
+    border-radius: 2px;
+}
+
+
+@media (max-width: 576px) {
+    .shop-brand button{
+        margin: 0px !important;
+        width: 100% !important;
+        background-color: #7e00aa !important;
+    }
+
+    .shop-nav-brand {
+        width: 100% !important;
+    }
+
+    .shop-brands-item {
+        font-size: 0.5rem !important;
+    }
+
+    .dropdown-item {
+        font-size: 0.7rem !important;
+        padding-left: 10px;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+    .shop-brand button {
+        margin: 0px !important;
+        width: 100% !important;
+        background-color: #7e00aa !important;
+    }
+
+    .shop-nav-brand {
+        width: 100% !important;
+    }
+
+    .shop-brands-item {
+        font-size: 0.6rem !important;
+    }
+
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+      .shop-brand button{
+          margin: 0px !important;
+          width: 100% !important;
+          background-color: #7e00aa !important;
+      }
+
+    .shop-nav-brand {
+        width: 100% !important;
+    }
+
+}
+
+@media (min-width: 991px) and (max-width: 1200px) {
+    .shop-brand button{
+        background-color: #7e00aa !important;
+    }
+}
+
+@media  (min-width: 1200px) {
+    .shop-brand button{
+        background-color: #7e00aa !important;
+    }
+}

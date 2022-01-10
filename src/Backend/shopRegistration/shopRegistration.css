@@ -1,0 +1,54 @@
+.registration {
+    top: 0;
+    justify-content: center !important;
+    z-index: 4;
+    width: 370px;
+    display: block;
+}
+
+.errors-list{
+        padding: 0;
+    text-align: left;
+    font-size: 0.8em;
+}
+
+input.form-reg {
+    width: 273px !important;
+    height: 35px !important;
+}
+
+input.form-aut {
+    width: 127px !important;
+    height: 35px !important;
+}
+
+.form-text {
+    font-size: 0.8rem !important;
+}
+
+.btn-block {
+    width: 100%!important;
+    margin-right: 0px;
+}
+
+.btn-reg {
+    color: purple;
+    border: 2px solid purple;
+    background-color: transparent;
+}
+
+@media (max-width: 576px) {
+    input.form-aut {
+        width: 110px !important;
+        height: 35px !important;
+    }
+
+    input.form-reg {
+        width: 250px !important;
+        height: 35px !important;
+    }
+
+    .btn-reg {
+        width: 250px !important;
+    }
+}

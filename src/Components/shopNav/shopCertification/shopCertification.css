@@ -1,0 +1,16 @@
+.job-des {
+    font-size: 1.5rem;
+}
+
+@media (max-width: 576px) {
+    .job-des {
+        font-size: 1rem;
+    }
+
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+    .job-des {
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,39 @@
+/**
+*	Show recent orders script loader.
+*	version number: 4.0
+*	https://apps.shopify.com/show-recent-orders
+*/
+(function(){	
+	var loadScript=function(a,b){var c=document.createElement("script");c.type="text/javascript",c.async=!0,c.defer=!0,c.readyState?c.onreadystatechange=function(){("loaded"==c.readyState||"complete"==c.readyState)&&(c.onreadystatechange=null,b())}:c.onload=function(){b()},c.src=a,document.getElementsByTagName("head")[0].appendChild(c)};
+	
+	appendScriptUrl('sc-stockshop.myshopify.com');
+	
+	// get script url and append timestamp of last change
+	function appendScriptUrl(shop) {
+
+		var timeStamp = Math.floor(Date.now() / (1000*30));
+		var timestampUrl = 'https://www.goldendev.win/shopify/show-recent-orders/shop/status/'+shop+'.js?'+timeStamp;
+		
+		loadScript(timestampUrl, function() {
+			// append app script
+			if (typeof sro_settings_updated == 'undefined') {
+				console.log('settings are undefined');
+				sro_settings_updated = 'default-by-script';
+			}
+			
+			var mParam = '';
+			try {
+				var isMobile = /(android|blackberry|iphone|webos|palm|phone)/i.test(navigator.userAgent);
+				if (isMobile) {
+					var mParam = '&mobile';
+				}
+			} catch(e) {}
+			
+							var scriptUrl = "https://cloud.goldendev.win/shopify/show-recent-orders/js/show-recent-orders-script-v2.js?shop="+shop+"&"+sro_settings_updated+mParam;
+						
+			loadScript(scriptUrl, function(){});
+			
+		});
+	}
+
+})();

@@ -1,0 +1,906 @@
+/**
+*	Show recent orders script.
+*	version number: 40.0
+*	round design
+*	https://apps.shopify.com/show-recent-orders
+*/
+if (typeof GDVShowRecentOrdersApp_123987 === 'undefined') {
+
+	var GDVShowRecentOrdersApp_123987 = function(){
+
+										
+		var loadScript=function(a,b){var c=document.createElement("script");c.type="text/javascript",c.readyState?c.onreadystatechange=function(){("loaded"==c.readyState||"complete"==c.readyState)&&(c.onreadystatechange=null,b())}:c.onload=function(){b()},c.src=a,document.getElementsByTagName("head")[0].appendChild(c)};
+
+		var showRecentOrdersInnerApp = function($){
+			
+			// This variable can be modified by an external script and will regulate the display of notifications
+			var canShowNotifications = true;
+			// This variable consists the timeout for the call_api() function
+			var callApiTimeout = false;
+			
+			// initialize notification types counters
+			var notification_types = [
+				'order',
+				'custom',
+				'cart'
+			];
+			var shown_notifications = [];
+			for(i=0; i < notification_types.length; i++) {
+				shown_notifications[notification_types[i]] = 0;
+			}
+			
+			var requestNum = 0;
+			
+			function initialize()
+			{
+							$( "body" ).append( ' \
+				<style> \
+									@import url(\'https://fonts.googleapis.com/css?family=Raleway:400,700\');  \
+					@import url(\'https://fonts.googleapis.com/css?family=Josefin+Sans:400,700\');\
+								#sro-popup { \
+					box-shadow: 0 0 10px rgba(0, 0, 0, .4); \
+					width:400px;\
+					font-family: \'Raleway\',Arial,Helvetica,sans-serif; \
+					font-family: \'Josefin Sans\',\'Raleway\',Arial,Helvetica,sans-serif; \
+					font-weight:normal;\
+					\
+					font-size:14px; \
+					font-size:14px; \
+					position:fixed; \
+					bottom:-250px;\											left:10px;\										border-radius:3px;\
+					overflow:hidden;\
+					z-index: 2147483647;\
+					line-height:1.48;\
+					\
+											box-shadow: none;\
+						border-radius:0;\
+						background:white;\
+						color:black;\
+						border: 1px solid #ccc;\
+															\
+					background:#ffffff;color:#000000;											cursor: pointer;\
+										box-sizing: border-box;				\
+				}\
+				.sro-image>.sro-item-image { \
+					position: absolute; \
+					top: 0; \
+					left: 0; \
+					right: 0; \
+					bottom: 0; \
+					display: block; \
+					background-repeat: no-repeat; \
+					background-size: cover; \
+					background-position: center center; \
+											margin: 2px;\
+														}\
+				.sro-image>a { \
+					position: absolute; \
+					top: 0; \
+					left: 0; \
+					right: 0; \
+					bottom: 0; \
+					display: block; \
+					background-repeat: no-repeat; \
+					background-size: cover; \
+					background-position: center center; \
+											margin: 2px;\
+														}\
+				.sro-image .sro-no-img-link {right: initial;bottom: initial;width:0;height:0;}				.sro-image {\
+					height: 100%;\
+					width: 95px;\
+					position: absolute;\
+					left: 0;\
+					float: left;\
+					z-index:999;\
+														}\
+								.sro-message { \
+					padding: 10px 10px 25px 110px;\
+										height: 100%;\
+					position: relative;\
+										text-align:left;\
+									}\
+				#sro-popup.sro-orders-grouped .sro-message {font-weight:bold;text-shadow:none;}_:-ms-lang(x), .sro-message {height: auto;}				/* No image notif definition*/\
+				#sro-popup.sro-no-image .sro-image {\
+					display:none;\
+				}\
+				#sro-popup.sro-no-image .sro-message {\
+					padding:10px 10px 25px 12px;\
+				}\
+				#sro-popup.sro-no-url {\
+					cursor:inherit;\
+				}\
+				\
+				.sro-message .sro-item-name, .sro-message span .sro-item-name { \
+											font-style:italic;\
+										font-weight:bold;\
+											text-decoration:underline;\
+												color:#139bbd;\
+										color:#D0A49C;				}\
+				.sro-message a:hover { \
+					text-decoration:underline;\
+				}\
+				.sro-time-ago { \
+					position: absolute;\
+					bottom: 5px;\
+					right: 10px;\
+					font-size: 12px;\
+					font-size:12px;\
+					text-transform: uppercase;\
+															color:#000000;				}\
+				#sro-width-check {\
+					position:fixed;\
+					left:-100px;\
+					bottom:-100px;\
+					width:1px;\
+					height:1px;\
+				}\
+				@media only screen and (max-width: 460px) {\
+					#sro-popup { right:10px;left:10px;width:auto;}					\
+					#sro-width-check {\
+						display:none;\
+					}\
+									}\
+				\
+				\
+					\
+					.sro-close-thin {\
+						width:16px;\
+						height:16px;\
+						-webkit-transform:rotate(45deg);\
+						-x-transform:rotate(45deg);\
+						-o-transform:rotate(45deg);\
+						transform:rotate(45deg);\
+						position: absolute;\
+						right: 3px;\
+						top: 3px;\
+						border:none;\
+						cursor:pointer;\
+						box-sizing: border-box;\
+											}\
+											/* Increase right padding to prevent overlapping */\
+						.sro-message {\
+							padding-right: 20px;\
+						}\
+										.sro-close-thin::before {\
+						content: "";\
+						display: block;\
+						height: 100%;\
+						width: 2px;\
+						background-color: #000000;\
+						position: absolute;\
+						left: 7px;\
+						top: 0;\
+					}\
+					.sro-close-thin::after {\
+						content: "";\
+						display: block;\
+						height: 2px;\
+						width: 100%;\
+						background-color: #000000;\
+						position: absolute;\
+						left: 0;\
+						top: 7px;\
+					}\
+								\
+					.sro-close-thin {\
+						opacity:0;\
+						transition: opacity .2s ease-in-out;\
+						outline:none;\
+					}\
+					#sro-popup:hover .sro-close-thin {\
+						opacity:1;\
+						transition: opacity .2s ease-in-out;\
+						outline:none;\
+					}\
+					/* Only allow hidding the closing button on devices which are capable of hovering. Use @media (hover: hover) when browsers support it. */\
+					@media only screen and (max-width: 600px) {\
+						.sro-close-thin {\
+							opacity:1;\
+						}\
+					}\
+				\
+				\
+												</style> \
+				\
+				');				
+								
+									$('body').append('<div id="sro-popup" style="display: block;"> <div> <div class="sro-image"></div> <div class="sro-message" style=""> <p class="sro-time-ago"></p> </div></div> </div> ');
+								
+				// Append element for width check
+				$( "body" ).append('<div id="sro-width-check"></div>');
+			}
+			
+			function set_trigger(isFirst) {
+				isFirst = typeof isFirst !== 'undefined' ? isFirst : false;
+
+				if (isFirst == true) {
+					call_api();
+				} else {
+					if (callApiTimeout !== false) {
+						clearTimeout(callApiTimeout);
+					}
+					
+					callApiTimeout = setTimeout
+					(
+						function() {
+							call_api();
+						}, Math.round
+							(
+							2000 + Math.random() * 18010							)
+					);
+				}
+			}
+
+			var get_script=function(a,b){var c=document.createElement("script");c.type="application/javascript",c.readyState?c.onreadystatechange=function(){("loaded"==c.readyState||"complete"==c.readyState)&&(c.onreadystatechange=null,b())}:c.onload=function(){b()},c.src=a,document.getElementsByTagName("head")[0].appendChild(c)};
+			
+						
+			
+var Languages = {
+	langs: [],
+	getLang: function() {
+		var hostname = window.location.hostname;
+		
+		var url = window.location.href;
+		url = url.replace('https://','');
+		url = url.replace('http://','');
+		
+		for (var i=0;i < this.langs.length; i++) {
+			switch(this.langs[i].resolved_by) {
+				case 'domain':
+					if (window.location.hostname.indexOf(this.langs[i].match_value) !== -1) {
+						return this.langs[i].id;
+					}
+				break;
+				case 'url_param':
+					var url = window.location.pathname + window.location.search;					
+					if (url.indexOf(this.langs[i].match_value) !== -1) {
+						return this.langs[i].id;
+					}
+				break;
+				case 'langify_id':
+				 
+					if (typeof langify !== 'undefined' && typeof langify.helper !== 'undefined' && typeof langify.helper.getSelectedLanguage === 'function') {
+						var langifyLang = langify.helper.getSelectedLanguage();
+						
+						if (langifyLang == this.langs[i].match_value) {
+							return this.langs[i].id;
+						}
+					}
+				break;
+			}
+		}
+
+		return 'd';
+	}
+};
+
+var lang = Languages.getLang();
+
+			
+			function call_api() {
+				
+				if (canShowNotifications === false) {
+					// Notifications were disabled by external script
+					return true;
+				}
+				
+								
+				
+				if (ordersData == null || ordersData.length == 0) {
+			
+					var timeStamp = Math.floor(Date.now() / 1000);
+					
+					var referrer = encodeURIComponent(window.location.href);
+					
+					var counters = '';
+					for(i=0; i < notification_types.length; i++) {
+						
+						if (typeof shown_notifications[notification_types[i]] == 'undefined') {
+							var num = 0;
+						} else {
+							var num = shown_notifications[notification_types[i]];	
+						}
+						
+						counters += '&num_'+notification_types[i]+'='+num;
+					}
+					
+					// Increase request number counter
+					requestNum++;
+					counters += '&rqn='+requestNum;
+
+					var notifData = localNotifs.get();
+					
+					if (notifData == false) {
+						$.get("https://www.goldendev.win/shopify/show-recent-orders/get/last-order.php?shop=sc-stockshop.myshopify.com"+counters+"&"+timeStamp+"&lang="+lang+"&referrer="+referrer, 
+						function( data ) {
+							if (data != "no more"){
+								if(!data.error) {
+									// show popup
+									ordersData = data;
+									
+									preloadImage(ordersData[0]);
+									
+									setTimeout(function() {
+										showPopup(ordersData[0]);
+									  
+										ordersData.splice(0,1);
+
+										preloadImage(ordersData[0]);
+									}, 500);
+									
+									localNotifs.save(data);
+									
+								} else {
+									if(data.error != 'no more') {
+										set_trigger_with_delay();
+										setCookies();
+									} else {
+										setCookies("-1");
+									}
+								}
+							} else {
+								setCookies("-1");
+							}
+
+						},"json").fail(function(data) {
+
+							console.log('fs');
+							
+							var script_url = "https://www.goldendev.win/shopify/show-recent-orders/get/last-order.php?shop=sc-stockshop.myshopify.com&js"+counters+"&"+timeStamp+"&lang="+lang+"&referrer="+referrer;
+							get_script(script_url, function() {						
+								
+								data = showRecentOrdersData;
+								
+								if(data!="no more")
+								{
+										if(!data.error) {
+											// show popup
+											ordersData = data;
+											
+											preloadImage(ordersData[0]);
+											
+											setTimeout(function() {
+												showPopup(ordersData[0]);
+											  
+												ordersData.splice(0,1);
+
+												preloadImage(ordersData[0]);
+											}, 500);	
+											
+										} else {
+											if(data.error != 'no more') {
+												set_trigger_with_delay();
+												setCookies();
+											} else {
+												setCookies("-1");
+											}
+										}
+								} else {
+									setCookies("-1");
+								}
+							});
+						});
+					} else {
+						
+						// show popup
+						ordersData = notifData;
+						
+						preloadImage(ordersData[0]);
+						
+						setTimeout(function() {
+							showPopup(ordersData[0]);
+						  
+							ordersData.splice(0,1);
+
+							preloadImage(ordersData[0]);
+						}, 500);						
+					}
+				} else {
+					showPopup(ordersData[0]);
+					// remove current element
+					ordersData.splice(0,1);
+					// preload image for the next notification
+					preloadImage(ordersData[0]);
+				}
+			}
+			
+			var setTriggerWithDelay = false;
+			
+			function set_trigger_with_delay() {
+				
+				if (setTriggerWithDelay !== false) {
+					clearTimeout(setTriggerWithDelay);
+				}
+				
+				setTriggerWithDelay = setTimeout( function() {
+					set_trigger();
+				}, 2000);
+			}
+			
+			var hidePopupTimeout = false;
+			var recursiveBatchCallTimeout = false;
+			
+			function showPopup(data, skipBatchCheck) {
+				
+				if (canShowNotifications === false) {
+					// Notifications were disabled by external script
+					return true;
+				}
+				
+				if (typeof skipBatchCheck == 'undefined') {
+					skipBatchCheck = false;
+				}
+				
+								
+				
+				if ($("#sro-popup").length == 0) {
+					console.log('whoopsie doopsie');
+					
+					initialize();
+					
+					setTimeout(function() {
+					  showPopup(data);
+					}, 1000);
+					return;
+				}
+				
+								
+				// Remove no image class as notifications have images by default
+				$("#sro-popup").removeClass('sro-no-image');
+				$("#sro-popup").removeClass('sro-no-url');
+				$("#sro-popup").removeClass('sro-orders-grouped');
+				
+				// check if this is really valid json object
+				$("#sro-popup .sro-message").html(data.message);
+				$("#sro-popup .sro-image").html(data.product_image_html);
+				$("#sro-popup .sro-message .sro-time-ago").html(data.time_diff);
+				
+				if (typeof data.has_image != 'undefined' && data.has_image == false) {
+					// The notification is missing an image
+					$("#sro-popup").addClass('sro-no-image');
+				}
+				if (typeof data.has_url != 'undefined' && data.has_url == false) {
+					// The notification is missing an image
+					$("#sro-popup").addClass('sro-no-url');
+				}
+				
+				if (typeof data.type !== 'undefined' && data.type == 'grouped_orders') {
+					$("#sro-popup").addClass('sro-orders-grouped');
+				}
+				
+				var offset = '10px';				
+				offset = '10px';				
+								
+									// Animate with slide animation
+											setTimeout(function() {
+							$("#sro-popup").animate({bottom:offset}
+							, 800, function() {
+							hidePopupTimeout = setTimeout(function() {
+								hide_popup();
+								},  5000);
+							});
+						}, 50);
+													
+				setCookies();
+				
+				failnum = 0;
+				
+				if (typeof data.type != 'undefined') {
+					if (typeof shown_notifications[data.type] == 'undefined') {
+						shown_notifications[data.type] = 0;
+					} else {
+						if (shown_notifications[data.type] == -1) {
+							shown_notifications[data.type] = 1;
+						} else {
+							shown_notifications[data.type] = shown_notifications[data.type] + 1;
+						}
+					}
+				}
+				
+									stats.addEvent('d');
+											}
+			
+			/** 
+			* Gets resume delay for batch. Takes into account the delay from other tabs and is only synced once.
+			**/
+			var batch_is_synced = false;
+			function getBatchResumeDelay() {
+				
+				var batchCookieName = 'sro_batch_resume_target_timestamp_sc-stockshop.myshopify.com';
+				
+				var batch_resume_delay = 20000;
+				var current_timestamp = getTimestamp();
+				var batch_resume_target_timestamp = current_timestamp + batch_resume_delay;
+				
+				var previous_batch_resume_target_timestamp = readCookie(batchCookieName);
+
+				if (batch_is_synced == false && 
+					previous_batch_resume_target_timestamp != null && 
+					(previous_batch_resume_target_timestamp - current_timestamp) < batch_resume_delay &&
+					(previous_batch_resume_target_timestamp - current_timestamp) > 0) {
+					// syncing batch resume delay
+					batch_resume_delay = previous_batch_resume_target_timestamp - current_timestamp;
+					
+					if (batch_resume_delay <= 0) {
+						batch_resume_delay = 20000; // fallback in case something goes wrong
+					}
+				} else {
+					createCookie(batchCookieName, batch_resume_target_timestamp, (batch_resume_target_timestamp/1000/60 + 30));
+				}
+				
+				if (batch_is_synced == false) {
+					batch_is_synced = true;
+				}
+				
+				return batch_resume_delay;
+			}
+			
+			function getTimestamp() {
+				var datetime = new Date();
+				return datetime.getTime();
+			}
+			
+			var setTriggerToDisplayNotificationAgainTimeout = false;
+			function hide_popup(force) {
+			
+				if (mouseOver == false || force == true) {
+					
+					var offset = 10;
+											offset = 10;
+										
+										
+					// Check if popup really exists. It may happend that it was removed at some ajax pages
+					if ($("#sro-popup").length) {
+						
+													if (typeof $("#sro-popup")[0].getBoundingClientRect().height != 'undefined') {
+								var sro_popup_height = $("#sro-popup")[0].getBoundingClientRect().height + 10;
+							} else {
+								var sro_popup_height = $("#sro-popup").height() + 10;
+							}
+							
+							// Hide with slide out animation
+							$("#sro-popup").animate({bottom: sro_popup_height*(-1) - offset}
+							, 800, function() {
+								if (force == true) {
+									
+									clearTimeout(hidePopupTimeout);
+									
+									if (setTriggerToDisplayNotificationAgainTimeout != false) {
+										clearTimeout(setTriggerToDisplayNotificationAgainTimeout);
+									}
+									setTriggerToDisplayNotificationAgainTimeout = setTimeout(function() {
+										set_trigger();
+									}, 20000);
+								} else {
+									set_trigger();
+								}
+							});
+							
+												
+						localNotifs.removeLast();
+						
+					} else {
+						set_trigger();
+					}
+				} else {
+					timedOut = true;
+				}
+			}
+			
+			var hide_after_manipulation_timeout = null;
+			
+			function checkIfPopupMustDisappear(delay) {
+
+				mouseOver = false;	
+				if (timedOut == true) {
+					clearTimeout(hide_after_manipulation_timeout);
+					
+					timedOut = false;
+					
+					if (typeof delay != 'undefined') {
+						hide_after_manipulation_timeout = setTimeout(function() {
+								hide_popup();
+							},  delay);
+					} else {
+						hide_popup();
+					}
+				}
+			}
+			
+			function preloadImage(data) {
+				
+				if (typeof data == 'undefined') {
+					return false;
+				}
+				
+				if (typeof data.has_image != 'undefined' && data.has_image == false) {
+					return false;
+				}
+				
+				if (typeof data.product_image !== 'undefined') {
+					var imageUrl = data.product_image;
+				} else if (typeof data.image !== 'undefined') {
+					var imageUrl = data.image;
+				}
+				var img = new Image();				
+				img.src = imageUrl;
+			}
+
+							// Stats object for adding and collecting events
+				var stats={key:'sro_s',addEvent:function(b){try{var c=localStorage.getItem(this.key);c=null==c?{}:JSON.parse(c);var d=0|new Date().getTime()/1e3/3600;'undefined'==typeof c[d]&&(c[d]={}),'undefined'==typeof c[d][b]?c[d][b]=1:++c[d][b],c=JSON.stringify(c),localStorage.setItem(this.key,c)}catch(f){}},collectTimer:!1,collect:function(b){'undefined'==typeof b&&(b=0);try{var c=localStorage.getItem('sro_s');if(eventsJson=JSON.parse(c),0==eventsJson.length)return!0;var d=0;for(hour in eventsJson){var f=Object.values(eventsJson[hour]);for(i=0;i<f.length;i++)d+=f[i]}if(5>d)return!0;var g=localStorage.getItem('sro_s_dis');if(null!=g&&g>(0|new Date().getTime()/1e3-1200))return localStorage.setItem('sro_s','{}'),!0;if(null!=c&&'{}'!=c){localStorage.setItem('sro_s','{}');$.ajax({url:'https://s.goldendev.win/shopify/show-recent-orders/api/stats/c.php?shop=sc-stockshop.myshopify.com',timeout:1e4,data:{e:c},type:'POST'}).fail(function(){localStorage.setItem('sro_s_dis',0|new Date().getTime()/1e3)})}}catch(j){}}};stats.collect(),stats.addEvent('v');
+			
+			// Notif object for local notif storage
+			var localNotifs = {
+				maxAge: 60*1000*15,
+				relevantFirst: false,
+				groupedOrders: false,
+				cnt : 0,
+				id: 0,
+				key : 'sro_data',
+				save: function(d) {
+					try {
+						
+						if (this.canSaveOrGet() === false) {
+							return true;
+						}
+						
+						"undefined" == typeof sro_settings_updated && (sro_settings_updated = "1");
+						
+						this.id = new Date().getTime();
+
+						this.cnt = d.length;
+						var ld = {'time' : this.id, 'sro_upd_id': sro_settings_updated, 'data' : d};
+						ld = JSON.stringify(ld);
+						localStorage.setItem(this.key, ld);
+					} catch(e) {
+						console.log('Err when saving data');
+					}
+				},
+				get: function() {
+					try {
+						
+						if (this.canSaveOrGet() === false) {
+							return false;
+						}
+						
+						var ld = localStorage.getItem(this.key);
+						ld = JSON.parse(ld);
+						
+						"undefined" == typeof sro_settings_updated && (sro_settings_updated = "1");
+						
+						if (sro_settings_updated != ld.sro_upd_id || ld.time < (new Date().getTime() - this.maxAge)) {
+							// notifs are too old
+							return false;
+						}
+
+						if (ld.data.length > 0) {
+							this.id = ld.time;
+							this.cnt = ld.data.length;
+							
+							return ld.data;
+						}
+					} catch(e) {
+						return false;
+					}
+					return false;
+				},
+				removeLast: function() {
+					try {
+						var ld = localStorage.getItem(this.key);
+						ld = JSON.parse(ld);
+						
+						"undefined" == typeof sro_settings_updated && (sro_settings_updated = "1");
+						
+						if (sro_settings_updated == ld.sro_upd_id && ld.time == this.id && ld.data.length == this.cnt) {
+							ld.data.splice(0,1);
+							this.cnt = ld.data.length;
+							ld = JSON.stringify(ld);
+							localStorage.setItem(this.key, ld);
+						}
+					} catch(e) {}
+				},
+				isProductPage: function() {
+					if (/\/products\/([^\?\/\n]+)/.test(window.location.href)) {
+						return true;
+					}
+					return false;
+				},
+				canSaveOrGet: function() {
+					try {
+						if ((this.relevantFirst == true || this.groupedOrders == true) && this.isProductPage()) {
+							return false;
+						}
+					} catch(e) {}
+					
+					return true;
+				}
+			};
+			
+						
+						// Set notification language
+			localNotifs.key = localNotifs.key + '_' + lang;
+			
+			var ordersData = null;
+
+			var cookie_prefix = 'sro_sc-stockshop.myshopify.com_';
+			var closed_cookie_name = 'recent_orders_closed_sc-stockshop.myshopify.com';
+			var failnum = 0;
+			
+			var mouseOver = false;
+			var timedOut = false;
+			
+			// Reads num values from cookies and saves it to array
+			for (var i=0; i<notification_types.length; i++) {
+				var cookiename = cookie_prefix+notification_types[i];
+				if(readCookie(cookiename) == null) {
+					createCookie(cookiename, shown_notifications[notification_types[i]], 5);
+				} else if(parseInt(readCookie(cookiename)) < 700) { // Only use cookie value if it is less than 700
+					shown_notifications[notification_types[i]] = parseInt(readCookie(cookiename));
+				} else {
+					createCookie(cookiename, shown_notifications[notification_types[i]], 5);
+				}
+			}
+			
+			// Creates specific cookie with specific values
+			function createCookie(name,value,minutes) {
+				if (minutes) {
+					var date = new Date();
+					date.setTime(date.getTime()+(minutes*60*1000));
+					var expires = "; expires="+date.toGMTString();
+				}
+				else var expires = "";
+				document.cookie = name+"="+value+expires+"; path=/";
+			}
+			
+			// Creates cookies for all notification types
+			function setCookies(value, minutes) {
+				
+				if (typeof minutes == 'undefined') {
+					minutes = 5;
+				}
+
+				for (var i=0; i<notification_types.length; i++) {
+					if (typeof value == 'undefined') {
+						tmpvalue = shown_notifications[notification_types[i]];
+					} else {
+						tmpvalue = value;
+					}
+					
+					createCookie(cookie_prefix+notification_types[i], tmpvalue, minutes);
+					tmpvalue = undefined;
+				}
+			}
+			
+			function getTotalCount() {
+				var total = 0;
+				for (var i=0; i<notification_types.length; i++) {
+					total = total + shown_notifications[notification_types[i]];
+				}
+				
+				return total;
+			}
+			
+			// Reads specific cookie
+			function readCookie(name) {
+				var nameEQ = name + "=";
+				var ca = document.cookie.split(';');
+				for(var i=0;i < ca.length;i++) {
+					var c = ca[i];
+					while (c.charAt(0)==' ') c = c.substring(1,c.length);
+					if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+				}
+				return null;
+			}
+			
+			
+			
+			initialize();
+			
+							if (getTotalCount() == 0) {
+				setTimeout(function() {
+					set_trigger(true);
+					},  
+				5000);
+				} else {
+					set_trigger();
+				}
+						
+			console.info('%c -------------------------------------------------', 'color: #139bbd;');
+			console.info('%c --------- App loaded: Show Recent Orders --------', 'color: #139bbd;');
+			console.info('%c https://apps.shopify.com/show-recent-orders', 'color: #139bbd;');
+			console.info('%c -------------------------------------------------', 'color: #139bbd;');
+				
+			$(document).on('mouseenter touchstart','#sro-popup',function() {
+				mouseOver = true;
+			});
+			
+			$(document).on('mouseleave touchend touchcancel touchleave mouseup','#sro-popup',function(event) {
+
+				if (event.type == 'mouseup') {
+					checkIfPopupMustDisappear(1000);
+				} else {
+					checkIfPopupMustDisappear();
+				}
+			});
+
+			$(window).blur(function() {
+				checkIfPopupMustDisappear();
+			});
+			
+							$(document).on('click','#sro-popup',function() {
+					var url = $(this).find('.sro-image').first().children('a').first().attr('href');
+					
+					if (url.length > 0) {
+													// Track event
+							stats.addEvent('c');
+												window.location = url;
+					}
+				});
+						
+			// Click tracking
+			$(document).on('click','#sro-popup a',function() {
+									stats.addEvent('c');
+								return true;
+			});
+			
+									
+			
+			// Clear all timeouts to stop displaying notifications
+			function clearTimeouts() {
+				if (callApiTimeout !== false) {
+					clearTimeout(callApiTimeout);
+				}
+				if (hidePopupTimeout !== false) {
+					clearTimeout(hidePopupTimeout);
+				}
+				if (setTriggerWithDelay !== false) {
+					clearTimeout(setTriggerWithDelay);
+				}
+				if (setTriggerToDisplayNotificationAgainTimeout !== false) {
+					clearTimeout(setTriggerToDisplayNotificationAgainTimeout);
+				}
+				if (hide_after_manipulation_timeout !== false) {
+					clearTimeout(hide_after_manipulation_timeout);
+				}
+			}
+			
+			// This function canbe triggered by a third party to hide currently displayed notifications
+			function hideNotifications() {
+				canShowNotifications = false;
+				hide_popup(true);
+				clearTimeouts();
+			}
+			
+			// This functions can be triggered by a third party to resume showing the notifications
+			function showNotifications() {
+				if (canShowNotifications === false) {
+					canShowNotifications = true;
+					call_api();
+				}
+			}
+			
+			// These functions are made public so thrid parties can use them
+			window.ShowRecentOrdersApp = {
+				hideNotifications: hideNotifications,
+				showNotifications: showNotifications
+			};
+			
+			
+					};
+		
+
+		// check if jQuery has get method, as some apps modify it and remove it and everything else
+				if ((typeof jQuery === 'undefined') || (parseFloat(jQuery.fn.jquery) < 1.7) || typeof jQuery.get === 'undefined') {
+		  loadScript('//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js', function() {
+			jQuery191 = jQuery.noConflict(true);
+			showRecentOrdersInnerApp(jQuery191);
+		  });
+		} else {
+		  showRecentOrdersInnerApp(jQuery);
+		}
+	};
+	
+	
+			GDVShowRecentOrdersApp_123987();
+		
+}

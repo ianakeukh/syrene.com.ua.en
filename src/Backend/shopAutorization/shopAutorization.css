@@ -1,0 +1,90 @@
+.autorization {
+    top: 0;
+    margin: 0 !important;
+    justify-content: center !important;
+    z-index: 3;
+    width: 370px;
+}
+
+
+.card-header {
+    background-color: #FFFDC4;
+}
+
+.logo-autorization {
+    color: purple;
+}
+
+.btn-reg {
+    color: purple;
+    border: 2px solid purple;
+    background-color: transparent !important;
+}
+
+.btn-reg:hover {
+    color: purple;
+    border: 2px solid purple;
+    background-color: transparent !important;
+}
+
+.btn-block:hover {
+    color: purple;
+    border: 2px solid purple;
+}
+
+input.form-reg {
+    width: 270px !important;
+    height: 35px !important;
+}
+
+.form-text {
+    font-size: 0.8rem !important;
+}
+
+.btn-circle {
+    background: transparent;
+    border: 0px;
+}
+
+.btn-circle:focus {
+    outline: none;
+}
+
+.btn-aut {
+    transform: translate(65px, -6px);
+    background-color: transparent !important;
+    color: black;
+    width: 35px !important;
+    height: 35px;
+}
+
+
+.btn-aut:hover  {
+    color: black;
+}
+
+
+@media (max-width: 576px) {
+    .btn-block {
+        color: purple;
+        border: 2px solid purple;
+        width: 250px;
+    }
+
+    .form-text {
+        font-size: 0.8rem !important;
+    }
+
+    input.form-control.form-reg {
+        width: 250px !important;
+        height: 35px !important;
+    }
+
+    .btn-aut {
+        transform: translate(30px, -8px);
+        background-color: transparent !important;
+        color: black;
+        width: 35px !important;
+        height: 35px;
+    }
+}

@@ -1,0 +1,70 @@
+img.shop-slider {
+    height: 425px;
+    width: 100%;
+}
+
+.text-part {
+    color: #00ba34;
+}
+
+@media (max-width: 576px) {
+    .narration {
+        padding-bottom: calc(0%);
+        bottom: 0;
+        color: #9806c5 !important;
+        font-size: 0.6rem;
+        font-weight: bold;
+        text-align: center !important;
+        width: 100%;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+    .narration {
+        padding-top: calc(21.33333%);
+        top: 0;
+        color: #9806c5 !important;
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-align: center !important;
+        width: 100%;
+    }
+}
+
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .narration {
+        padding-top: calc(21.33333%);
+        top: 0;
+        color: #9806c5 !important;
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-align: center !important;
+        width: 100%;
+    }
+}
+
+@media (min-width: 991px) and (max-width: 1200px) {
+    .narration {
+        padding-top: calc(21.33333%);
+        top: 0;
+        color: #9806c5 !important;
+        font-size: 2rem;
+        font-weight: bold;
+        text-align: center !important;
+        width: 100%;
+    }
+}
+
+
+@media (min-width: 1200px) {
+    .narration {
+        padding-top: calc(21.33333%);
+        top: 0;
+        color: #9806c5 !important;
+        font-size: 2rem;
+        font-weight: bold;
+        text-align: center !important;
+        width: 100%;
+    }
+}

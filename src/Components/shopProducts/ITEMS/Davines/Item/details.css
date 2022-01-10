@@ -1,0 +1,27 @@
+.item-image {
+    -webkit-transition:all 1s ease;-moz-transition:all 1s ease;-o-transition:all 1s ease;transition:all 1s ease;
+    z-index: 5;
+    border: 1px solid black;
+}
+
+.new-image {
+    background-color: #3fa044 !important;
+}
+
+
+.show {
+    height: 100%;
+    margin: auto;
+    justify-content: center;
+}
+
+button.btn-like {
+    outline: none;
+    border: none;
+    border-radius: 2px !important;
+    background-color: white !important;
+}
+
+button.btn-like:hover {
+    background-color: rgba(223, 154, 231, 0.47) !important;
+}

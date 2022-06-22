@@ -108,7 +108,7 @@ class LIQPAY extends React.Component {
                                 </div>
                                 <ul className="nav nav-pills nav-stacked d-inline-flex w-100 pb-3">
                                     <li className="text-left w-50">Final Payment:</li>
-                                    <li className="text-right w-50">50<span> UAH</span></li>
+                                    <li className="text-right w-50">25<span> GBP</span></li>
                                 </ul>
                                 <br />
                                 <form method="POST" className='w-100' action="https://www.liqpay.ua/api/3/checkout"

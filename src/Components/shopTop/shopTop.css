@@ -25,6 +25,10 @@ i.fas.fa-cart-plus {
     color: #f5bfdb;
 }
 
+.modal.fade.top.show {
+    position: absolute!important;
+
+}
 
 @media (max-width: 576px) {
     .shop-bg-nav {
@@ -107,6 +111,8 @@ i.fas.fa-cart-plus {
 
     .modal-bin .modal-content {
         width: 300px !important;
+        justify-content: center;
+        margin: auto;
     }
 
     .logo-bordo-gold {
@@ -135,8 +141,18 @@ i.fas.fa-cart-plus {
     }
 
     i.fa-heart.heart-icon {
-        font-size: 17px!important;
+        font-size: 17px !important;
         padding-right: 0px !important;
+    }
+
+    div.modal.fade.top.show {
+        justify-content: center!important;
+        margin: auto!important;
+    }
+
+    .modal-backdrop.fade.show {
+       height: 100px;
+        width: 100%;
     }
 
 }

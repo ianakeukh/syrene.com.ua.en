@@ -3,8 +3,9 @@ import {Component} from 'react';
 import './../shopOrder.css'
 
 import {
+    MDBCard,
     MDBCol,
-    MDBInput,
+    MDBInput, MDBRow,
 } from 'mdbreact';
 
 
@@ -36,62 +37,60 @@ class SHIPMENT extends Component  {
 
     render() {
         return (
-            <MDBCol className='pl-5'>
-                <div className="custom-control custom-radio ml-1 my-2">
-                    <MDBInput onClick={this.onClick=(1)}  checked={this.state.radio===1 ? true : false} label="Самовивіз із нашого магазину YVONNE" type="radio" id="Radio2"  />
+            <MDBCol className='p-0'>
+                <div className="custom-control custom-radio m-0 px-4">
+                    <MDBInput onClick={this.onClick=(2)} checked={this.state.radio===2 ? true : false} label="Post Office" type="radio"  id='radio2' />
+                    <MDBCard className='mt-0 border-0 z-index-0 bg-transparent'>
+                        <MDBRow className='m-0 pt-xl-4 pt-lg-4 pt-md-3 pt-sm-3 pt-2 pb-4'>
+                            <MDBCol className='d-inline col-sm-6 col-12 pr-0 pl-0 pl-sm-3'>
+                                <MDBCol className='col-12 d-flex flex-column mb-3 pl-0 pr-lg-4 pr-md-4 pr-sm-4 pr-0'>
+                                    <label htmlFor="fname"><i className="fas fa-map-marked-alt"></i>City</label>
+                                    <input className='w-100 order' type="text" id="email" name="city" placeholder="Kiev" />
+                                </MDBCol>
+                                <MDBCol className='col-12 d-flex flex-column mb-3 pl-0 pr-lg-4 pr-md-4 pr-sm-4 pr-0'>
+                                    <label htmlFor="email"><i className="fas fa-map-marker-alt"></i>Street</label>
+                                    <input className='w-100 order' type="text" id="adr" name="address" placeholder="Balsdean 5" />
+                                </MDBCol>
+                            </MDBCol>
+                            <MDBCol className='d-inline col-sm-6 col-12 pr-0 pl-0 pl-sm-3'>
+                                <MDBCol className='col-12 d-flex flex-column mb-3 pl-0 pr-lg-4 pr-md-4 pr-sm-4 pr-0'>
+                                    <label htmlFor="email"><i className="fas fa-house-user"></i>House</label>
+                                    <input className='w-100 order' type="text" id="city" name="address" placeholder="32" />
+                                </MDBCol>
+                                <MDBCol className='col-12 d-flex flex-column mb-3 pl-0 pr-lg-4 pr-md-4 pr-sm-4 pr-0'>
+                                    <label htmlFor="fname"><i className="fas fa-house-user"></i>Post code</label>
+                                    <input className='w-100 order' type="text" id="city" name="post code" placeholder="BN1" />
+                                </MDBCol>
+                            </MDBCol>
+                        </MDBRow>
+                    </MDBCard>
                 </div>
-                <div className="custom-control custom-radio ml-1 my-2">
-                    <MDBInput onClick={this.onClick=(2)} checked={this.state.radio===2 ? true : false} label="Кур'єром за адресою" type="radio"  id='radio2' />
-                    <div className='inline-flex'>
-                        <MDBCol className='col-12 pl-xl-5 pl-md-5 pl-lg-5 pl-sm-5 pl-4'>
-                              <input className="col-5 col-xl-4 col-lg-4 col-md-4 col-sm-4 browser-default mr-3 input-shipment mt-2 ml-2 w-50" type="text" id="adr" name="address" placeholder="Місто" />
-                              <input className="col-5 col-xl-4 col-lg-4 col-md-4 col-sm-4 browser-default mr-3 input-shipment mt-2 ml-2 w-50" type="text" id="adr" name="address" placeholder="Вулиця" />
-                              <input className="col-5 col-xl-4 col-lg-4 col-md-4 col-sm-4 browser-default mr-3 input-shipment mt-2 ml-2 w-50" type="text" id="adr" name="address" placeholder="Будинок" />
-                              <input className="col-5 col-xl-4 col-lg-4 col-md-4 col-sm-4 browser-default mr-3 input-shipment mt-2 ml-2 w-50" type="text" id="adr" name="address" placeholder="Квартира" />
-                        </MDBCol>
-                    </div>
-                </div>
-                <div className="custom-control custom-radio ml-1 my-2">
-                    <MDBInput onClick={this.onClick=(3)} checked={this.state.radio===3 ? true : false} label='Новою Поштою'  type="radio" id="radio3" />
-                    <div className='inline-flex'>
-                        <MDBCol className='col-12 pl-xl-5 pl-md-5 pl-lg-5 pl-sm-5 pl-4'>
-                            <select className="col-5 col-xl-4 col-lg-4 col-md-4 col-sm-4 browser-default custom-select mr-3 input-shipment mt-2 ml-2 mr-4 w-50">
-                                <option>Оберіть місто</option>
-                                <option value="1">м.Київ</option>
-                                <option value="2">м.Тернопіль</option>
-                                <option value="3">м.Одесса</option>
-                                <option value="4">м.Полтава</option>
-                                <option value="5">м.Рівне</option>
-                                <option value="6">м.Миколаїв</option>
-                                <option value="7">м.Запоріжжя</option>
-                                <option value="8">м.Кривий Ріг</option>
-                                <option value="9">м.Вінниця</option>
-                                <option value="10">м.Львів</option>
-                            </select>
-                            <input className='input-shipment-one' type="text" id="adr" name="address" placeholder="Номер відділення НП" />
-                        </MDBCol>
-                    </div>
-                </div>
-                <div className="custom-control custom-radio ml-1 my-2">
-                    <MDBInput onClick={this.onClick=(4)} checked={this.state.radio===4 ? true : false} label='Укрпоштою'  type="radio" className="input-shipment" id="radio4" />
-                    <div className='inline-flex'>
-                        <MDBCol className='col-12 pl-xl-5 pl-md-5 pl-lg-5 pl-sm-5 pl-4'>
-                            <select className="col-5 col-xl-4 col-lg-4 col-md-4 col-sm-4 browser-default custom-select mr-3 input-shipment mt-2 ml-2 mr-4 ">
-                                <option>Оберіть місто</option>
-                                <option value="1">м.Київ</option>
-                                <option value="2">м.Тернопіль</option>
-                                <option value="3">м.Одесса</option>
-                                <option value="4">м.Полтава</option>
-                                <option value="5">м.Рівне</option>
-                                <option value="6">м.Миколаїв</option>
-                                <option value="7">м.Запоріжжя</option>
-                                <option value="8">м.Кривий Ріг</option>
-                                <option value="9">м.Вінниця</option>
-                                <option value="10">м.Львів</option>
-                            </select>
-                            <input className='input-shipment-one' type="text" id="adr" name="address" placeholder="Номер відділення УП" />
-                        </MDBCol>
-                    </div>
+                <div className="custom-control custom-radio ml-0 px-4">
+                    <MDBInput onClick={this.onClick=(2)} checked={this.state.radio===2 ? true : false} label="Royal Mail" type="radio"  id='radio2' />
+                    <MDBCard className='mt-0 border-0 z-index-0 bg-transparent'>
+                        <MDBRow className='m-0 pt-xl-4 pt-lg-4 pt-md-3 pt-sm-3 pt-2 '>
+                            <MDBCol className='d-inline col-sm-6 col-12 pr-0 pl-0 pl-sm-3'>
+                                <MDBCol className='col-12 d-flex flex-column mb-3 pl-0 pr-lg-4 pr-md-4 pr-sm-4 pr-0'>
+                                    <label htmlFor="fname"><i className="fas fa-map-marked-alt"></i>City</label>
+                                    <input className='w-100 order' type="text" id="email" name="city" placeholder="Kiev" />
+                                </MDBCol>
+                                <MDBCol className='col-12 d-flex flex-column mb-3 pl-0 pr-lg-4 pr-md-4 pr-sm-4 pr-0'>
+                                    <label htmlFor="email"><i className="fas fa-map-marker-alt"></i>Street</label>
+                                    <input className='w-100 order' type="text" id="adr" name="address" placeholder="Balsdean 5" />
+                                </MDBCol>
+                            </MDBCol>
+                            <MDBCol className='d-inline col-sm-6 col-12 pr-0 pl-0 pl-sm-3'>
+                                <MDBCol className='col-12 d-flex flex-column mb-3 pl-0 pr-lg-4 pr-md-4 pr-sm-4 pr-0'>
+                                    <label htmlFor="email"><i className="fas fa-house-user"></i>House</label>
+                                    <input className='w-100 order' type="text" id="city" name="address" placeholder="32" />
+                                </MDBCol>
+                                <MDBCol className='col-12 d-flex flex-column mb-3 pl-0 pr-lg-4 pr-md-4 pr-sm-4 pr-0'>
+                                    <label htmlFor="fname"><i className="fas fa-house-user"></i>Post code</label>
+                                    <input className='w-100 order' type="text" id="city" name="post code" placeholder="BN1" />
+                                </MDBCol>
+                            </MDBCol>
+                        </MDBRow>
+                    </MDBCard>
                 </div>
             </MDBCol>
         )

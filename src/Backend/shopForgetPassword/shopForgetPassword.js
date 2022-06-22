@@ -74,13 +74,13 @@ class ShopForgetPassword extends Component  {
                     <div className='m-0'>
                         <div className='card z-depth-0 border-0'>
                             <form className='text-center px-5 pb-5 pt-3' action="#!" onSubmit={ (e) => this.submitForgot(e) }>
-                                <input  value={this.state.email} onChange={ (e) => this.setState({email: e.target.value})} type='email' className="form-control mb-4 form-reg" placeholder="Електронна пошта" />
+                                <input  value={this.state.email} onChange={ (e) => this.setState({email: e.target.value})} type='email' className="form-control mb-4 form-reg" placeholder="Email" />
 
                                 <p>{ this.state.alert }</p>
 
-                                <button onClick={this.loginSubmit} className="btn btn-reg font-weight-bold my-4 w-100" >Отримати пароль</button>
-                                <p>Ще не зареєстровані?
-                                    <a href="#" onClick={ () => this.goToRegistration() } className='pl-3' >Зареєструватись</a>
+                                <button onClick={this.loginSubmit} className="btn btn-reg font-weight-bold my-4 w-100" >Get password</button>
+                                <p>You are not registered yet
+                                    <a href="#" onClick={ () => this.goToRegistration() } className='pl-3' >Register</a>
                                 </p>
                             </form>
                         </div>

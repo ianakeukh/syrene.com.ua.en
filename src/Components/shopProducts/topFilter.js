@@ -95,7 +95,7 @@ class TopFilter extends Component  {
                             <MDBCard className='dd-text pink lighten-5 h-100' color='#fce4ec'>
                                 <MDBLink to="/shampoo" className='p-0 text-center active h-100 p-0 m-0' >
                                         <button onClick={this.chooseTopHandle.bind(null,'shampoo')} className={'border-0 h-100 p-0 m-0 w-100 top-filter-btn bg-transparent py-5 pt-sm-4 pb-sm-4 pt-md-5 pb-md-5 pt-lg-5 pb-lg-5 pt-xl-5 pb-xl-5 '+this.isActive('shampoo')}>
-                                            <span className='text-span mt-3 font-weight-bold shop-prod-item'>ШАМПУНІ</span>
+                                            <span className='text-span mt-3 font-weight-bold shop-prod-item'>SHAMPOO</span>
                                         </button>
                                 </MDBLink>
                             </MDBCard>
@@ -104,7 +104,7 @@ class TopFilter extends Component  {
                             <MDBCard className='dd-text pink lighten-5' color='#fce4ec'>
                                 <MDBLink to="/conditioner" className='p-0 text-center h-100 p-0 m-0' >
                                     <button onClick={this.chooseTopHandle.bind(null,'conditioner')} className={'px-0 border-0 h-100 w-100 top-filter-btn bg-transparent pt-4 pb-4 pt-sm-4 pb-sm-4 pt-md-5 pb-md-5 pt-lg-5 pb-lg-5 pt-xl-5 pb-xl-5 '+this.isActive('conditioner')}>
-                                        <span className='text-span mt-3 font-weight-bold shop-prod-item'>КОНДИЦІОНЕРИ</span>
+                                        <span className='text-span mt-3 font-weight-bold shop-prod-item'>CONDITIONER</span>
                                     </button>
                                 </MDBLink>
                             </MDBCard>
@@ -113,7 +113,7 @@ class TopFilter extends Component  {
                             <MDBCard className='dd-text pink lighten-5' color='#fce4ec'>
                                 <MDBLink to="/mask" className='p-0 text-center h-100 p-0 m-0' >
                                     <button onClick={this.chooseTopHandle.bind(null, 'mask')} className={'border-0 h-100 w-100 top-filter-btn bg-transparent pt-4 pb-4 pt-sm-4 pb-sm-4 pt-md-5 pb-md-5 pt-lg-5 pb-lg-5 pt-xl-5 pb-xl-5 '+this.isActive('mask')}>
-                                        <span className='text-span mt-3 font-weight-bold shop-prod-item'>МАСКИ</span>
+                                        <span className='text-span mt-3 font-weight-bold shop-prod-item'>MASK</span>
                                     </button>
                                 </MDBLink>
                             </MDBCard>
@@ -122,7 +122,7 @@ class TopFilter extends Component  {
                             <MDBCard className='dd-text pink lighten-5' color='#fce4ec'>
                                 <MDBLink to="/styling" className='p-0 text-center h-100 p-0 m-0' >
                                     <button onClick={this.chooseTopHandle.bind(null, 'styling')} className={'border-0 h-100 w-100 top-filter-btn bg-transparent pt-4 pb-4 pt-sm-4 pb-sm-4 pt-md-5 pb-md-5 pt-lg-5 pb-lg-5 pt-xl-5 pb-xl-5 '+this.isActive('styling')}>
-                                        <span className='text-span mt-3 font-weight-bold shop-prod-item'>СТАЙЛІНГИ</span>
+                                        <span className='text-span mt-3 font-weight-bold shop-prod-item'>STYLING</span>
                                     </button>
                                 </MDBLink>
                             </MDBCard>
@@ -131,7 +131,7 @@ class TopFilter extends Component  {
                             <MDBCard className='dd-text pink lighten-5' color='#fce4ec'>
                                 <MDBLink to="/oil" className='p-0 text-center h-100 p-0 m-0' >
                                     <button onClick={this.chooseTopHandle.bind(null, 'oil')} className={'border-0 h-100 w-100 bg-transparent top-filter-btn pt-4 pb-4 pt-sm-4 pb-sm-4 pt-md-5 pb-md-5 pt-lg-5 pb-lg-5 pt-xl-5 pb-xl-5 '+this.isActive('oil')}>
-                                        <span className='text-span mt-3 font-weight-bold shop-prod-item'>ОЛІЇ</span>
+                                        <span className='text-span mt-3 font-weight-bold shop-prod-item'>OIL</span>
                                     </button>
                                 </MDBLink>
                             </MDBCard>
@@ -140,7 +140,7 @@ class TopFilter extends Component  {
                             <MDBCard className='dd-text pink lighten-5' color='#fce4ec'>
                                 <MDBLink to="/protection" className='p-0 text-center h-100 p-0 m-0' >
                                     <button onClick={this.chooseTopHandle.bind(null, 'protection')} className={'border-0 h-100 w-100 bg-transparent top-filter-btn  pt-4 pb-4 pt-sm-4 pb-sm-4 pt-md-5 pb-md-5 pt-lg-5 pb-lg-5 pt-xl-5 pb-xl-5 '+this.isActive('protection')}>
-                                        <span className='text-span mt-3 font-weight-bold shop-prod-item'>ЗАХИСТ</span>
+                                        <span className='text-span mt-3 font-weight-bold shop-prod-item'>PROTECTION</span>
                                     </button>
                                 </MDBLink>
                             </MDBCard>

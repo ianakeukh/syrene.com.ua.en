@@ -180,13 +180,12 @@ input.input-search {
     width: 100px;
 }
 
-.profile-menu-block:hover .profile-menu {
-    display: block !important;
-    position: absolute !important;
-    background: #a74eb6 !important;
-    padding: 10px;
-    z-index: 500;
-}
+/*.profile-menu-block:hover .profile-menu {*/
+/*    display: block !important;*/
+/*    background: #a74eb6 !important;*/
+/*    padding: 10px;*/
+/*    z-index: 500;*/
+/*}*/
 
 .profile-menu-info {
   display: none;
@@ -213,11 +212,9 @@ input.input-search {
     background-color: #eaadf5 !important;
     width: 128px !important;
     height: 200px !important;
-}
-
-.pr-menu-link {
     border: 2px solid #d77af6;
 }
+
 
 .shop-nav-second {
     z-index: 100 !important;

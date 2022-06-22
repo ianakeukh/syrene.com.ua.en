@@ -178,12 +178,11 @@ class ShopFilter extends Component  {
         console.log(this.props);
         return (
     <div className='shop-filters h-100 left w-responsive'>
-        <h5 className='font-weight-bold pt-2 pt-md-4 pl-5 pb-4 ml-sm-0 ml-3' >Фільтри</h5>
+        <h5 className='font-weight-bold pt-2 pt-md-4 pl-5 pb-4 ml-sm-0 ml-3' >Filters</h5>
         <div className='shop-filters-prod filter filter-basic'>
             {this.props.data ?
             <div className='mb-4 mb-sm-5 mb-md-5 mb-lg-5 mb-xl-5'>
-                <p className='m-2 mb-3 font-weight-bold'>ВИД ПРОДУКЦІЇ</p>
-                <input onChange={this.typeInputChange} type='text' className='w-75 m-2 mt-3 mb-3 search-input' />
+                <p className='m-2 mb-3 font-weight-bold'>TYPE</p>
                 <Scrollbars className='mb-4 mb-sm-5 mb-md-5 mb-lg-5 mb-xl-5 w-100 scroll'>
                     {this.props.data.type.map((elem, index) => (
                         <MDBInput key={index} value={elem.type_id} name='type' label={elem.type_title} name="type" onChange={ (e) => this.setFilter(e) } type='checkbox' className='check-item'/>
@@ -192,8 +191,7 @@ class ShopFilter extends Component  {
             </div>: null}
             {this.props.data ?
             <div className='mb-4 mb-sm-5 mb-md-5 mb-lg-5 mb-xl-5'>
-                <p className='m-2 font-weight-bold'>БРЕНД</p>
-                <input onChange={this.brandInputChange} type='text' className='w-75 m-2 mt-3 mb-3 search-input' />
+                <p className='m-2 font-weight-bold'>BRAND</p>
                 <Scrollbars className='mb-4 mb-sm-5 mb-md-5 mb-lg-5 mb-xl-5 w-100 scroll'>
                 {this.props.data.brand.map((elem, index) => (
                     <MDBInput key={index} value={elem.brand_id} name='brand' onChange={ (e) => this.setFilter(e) } label={elem.brand_title} type='checkbox' />
@@ -201,19 +199,17 @@ class ShopFilter extends Component  {
                 </Scrollbars>
             </div>: null}
             {this.props.data ?
+            // <div className='mb-4 mb-sm-5 mb-md-5 mb-lg-5 mb-xl-5'>
+            //     <p className='m-2 font-weight-bold'>SERIA</p>
+            //     <Scrollbars className='mb-5 w-100 scroll'>
+            //         {this.props.data.seria.map((elem, index) => (
+            //             <MDBInput key={index} value={elem.seria_id} name='seria' onChange={ (e) => this.setFilter(e) } label={elem.seria_title} type='checkbox' />
+            //         ))}
+            //     </Scrollbars>
+            // </div>: null }
+            // {this.props.data ?
             <div className='mb-4 mb-sm-5 mb-md-5 mb-lg-5 mb-xl-5'>
-                <p className='m-2 font-weight-bold'>СЕРІЯ</p>
-                <input onChange={this.volumeInputChange} type='text' className='w-75 m-2 mt-3 mb-3 search-input' />
-                <Scrollbars className='mb-5 w-100 scroll'>
-                    {this.props.data.seria.map((elem, index) => (
-                        <MDBInput key={index} value={elem.seria_id} name='seria' onChange={ (e) => this.setFilter(e) } label={elem.seria_title} type='checkbox' />
-                    ))}
-                </Scrollbars>
-            </div>: null }
-            {this.props.data ?
-            <div className='mb-4 mb-sm-5 mb-md-5 mb-lg-5 mb-xl-5'>
-                <p className='m-2 font-weight-bold'>ОБСЯГ</p>
-                <input onChange={this.amountInputChange} type='text' className='w-75 m-2 mt-3 mb-3 search-input' />
+                <p className='m-2 font-weight-bold'>AMOUNT</p>
                 <Scrollbars className='mb-0 w-100 scroll'>
                     {this.props.data.amount.map((elem, index) => (
                         <MDBInput key={index} value={elem.amount_id} name='amount' onChange={ (e) => this.setFilter(e) }  label={elem.amount_title} type='checkbox'/>
@@ -222,15 +218,14 @@ class ShopFilter extends Component  {
             </div>: null}
             {this.props.data ?
             <div className='mb-4 mb-sm-5 mb-md-5 mb-lg-5 mb-xl-5'>
-                <p className='m-2 mb-3 font-weight-bold'>ТИП ВОЛОССЯ</p>
+                <p className='m-2 mb-3 font-weight-bold'>HAIRTYPE</p>
                 {this.props.data.hairtype.map((elem, index) => (
                 <MDBInput key={index} value={elem.hairtype_id} name='hairtype' onChange={ (e) => this.setFilter(e) } label={elem.hairtype_title} type='checkbox' />
                 ))}
             </div>: null}
             {this.props.data ?
             <div className='mb-4 mb-sm-5 mb-md-5 mb-lg-5 mb-xl-5'>
-                <p className='m-2 mb-3 font-weight-bold'>ПРИЗНАЧЕННЯ</p>
-                <input onChange={this.appInputChange} type='text' className='w-75 m-2 mt-3 mb-3 search-input' />
+                <p className='m-2 mb-3 font-weight-bold'>APPOINTMENT</p>
                 <Scrollbars className='mb-4 mb-sm-5 mb-md-5 mb-lg-5 mb-xl-5 w-100 scroll'>
                     {this.props.data.appointment.map((elem, index) => (
                         <MDBInput key={index} value={elem.app_id} name='appointment' onChange={ (e) => this.setFilter(e) } label={elem.app_title} type='checkbox' />
@@ -239,18 +234,18 @@ class ShopFilter extends Component  {
             </div>: null}
             {this.props.data ?
             <div className='mb-4 mb-sm-5 mb-md-5 mb-lg-5 mb-xl-5'>
-                <p className='m-2 mb-3 font-weight-bold'>КАТЕГОРІЯ</p>
+                <p className='m-2 mb-3 font-weight-bold'>CATEGORY</p>
                 {this.props.data.gender.map((elem, index) => (
                     <MDBInput key={index} value={elem.gen_id} name='gender' onChange={ (e) => this.setFilter(e) } label={elem.gen_title} type='checkbox' />
                 ))}
             </div>: null}
             <div className='mb-5'>
-                <p className='m-2 mb-3 font-weight-bold'>ЦІНА</p>
+                <p className='m-2 mb-3 font-weight-bold'>PRICE</p>
                 <div className='d-flex'>
                     <form className='multi-range-field w-50 w-auto d-inline-flex m-2 '>
-                        <input className='w-25'  id='min'  type='number' placeholder="Від" name="price_from" onChange={ (e) => this.setFilter(e) }></input>
+                        <input className='w-25'  id='min'  type='number' placeholder="From" name="price_from" onChange={ (e) => this.setFilter(e) }></input>
                         <p className='px-3 mt-2 mb-0'> — </p>
-                        <input className='w-25'  id='max'  type='number' placeholder="До" name="price_to" onChange={ (e) => this.setFilter(e) }></input>
+                        <input className='w-25'  id='max'  type='number' placeholder="To" name="price_to" onChange={ (e) => this.setFilter(e) }></input>
                     </form>
                 </div>
             </div>

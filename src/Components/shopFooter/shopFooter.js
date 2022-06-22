@@ -47,95 +47,85 @@ class ShopFooter extends Component  {
                                     <div className='w-100 pb-5 w-responsive'>
                                        <img className='image-bordo w-100 w-responsive' src={require('./../../img/catalogue/sirene-logo.png')}/>
                                     </div>
-                                    <p className="logo-text pr-1">Початкова краса - це те, як людина виглядає вранці, ледь встав з ліжка, тобто природно, але бездоганно.</p>
-                                    <p className="logo-text-cr pb-1 mb-0 pr-1">Сьюзен Коллінз, "Голодні ігри"</p>
+                                    <p className="logo-text pr-1">Initial beauty is how a person looks in the morning, barely getting out of bed, that is, naturally, but perfectly.</p>
+                                    <p className="logo-text-cr pb-1 mb-0 pr-1">Susan Collins, The Hunger Games</p>
                                 </MDBCol>
                                 <MDBCol sm="5" md="3" className='col-6 w-responsive p-md-0 p-sm-0 p-0 mb-5'>
-                                    <h5 className="title pl-lg-5 pl-md-2 footer-nav pl-sm-2 pl-1 text-left pl-2 pt-2 pt-xl-4 pt-md-3 pt-sm-2">Навігація</h5>
+                                    <h5 className="title pl-lg-5 pl-md-2 footer-nav pl-sm-2 pl-1 text-left pl-2 pt-2 pt-xl-4 pt-md-3 pt-sm-2">Navigation</h5>
                                     <ul className='pl-lg-5 pl-md-2 pl-sm-2 text-left pl-2 d-table'>
                                         <li>
                                             <Link to='/' className="w-100 pb-2 footer-nav">
-                                                <span>Головна</span>
+                                                <span>Main</span>
                                             </Link>
                                         </li>
                                         <li>
                                             <Link to='/shopAboutShop' className="w-100 list-unstyled pb-2 footer-nav">
-                                                <span>Про магазин</span>
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link to='/ShopJob' className="w-100 list-unstyled pb-2 footer-nav">
-                                                <span>Співпраця</span>
+                                                <span>About shop</span>
                                             </Link>
                                         </li>
                                         <li>
                                             <Link to='/shopContacts' className="w-100 list-unstyled pb-2 footer-nav">
-                                                <span>Контакти</span>
+                                                <span>Contacts</span>
                                             </Link>
                                         </li>
                                     </ul>
                                 </MDBCol>
                                 <MDBCol sm="5" md="3" className='col-5  w-responsive p-md-0 p-sm-0 p-0'>
-                                    <h5 className="title pl-lg-5 pl-md-2 pl-sm-4 text-left pt-2 pt-2 pt-xl-4 pt-md-3 pt-sm-2 pl-0">Товари</h5>
+                                    <h5 className="title pl-lg-5 pl-md-2 pl-sm-4 text-left pt-2 pt-2 pt-xl-4 pt-md-3 pt-sm-2 pl-0">Products</h5>
                                     <ul className='pl-lg-5 pl-md-2 pl-sm-4 text-left pl-0 h-100'>
                                         <li>
                                             <NavLink to="/shampoo"  className="list-unstyled pb-2 w-100">
-                                                Шампуні для волосся
+                                                Shampoo
                                             </NavLink>
                                         </li>
                                         <li>
                                             <NavLink to="/conditioner" className="list-unstyled pb-2">
-                                                Кондиціонери для волосся
+                                                Conditioners
                                             </NavLink>
                                         </li>
                                         <li>
                                             <NavLink to="/mask" className="list-unstyled pb-2">
-                                                Маски для волосся
+                                                Masks
                                             </NavLink>
                                         </li>
                                        <li>
                                            <NavLink to="/styling" className="list-unstyled pb-2">
-                                               Стайлінги
+                                               Stylings
                                            </NavLink>
                                        </li>
                                         <li>
                                             <NavLink to="/oil" className="list-unstyled pb-2">
-                                                Олія
+                                                Oils
                                             </NavLink>
                                         </li>
                                         <li>
                                             <NavLink to="/protection" className="list-unstyled pb-2">
-                                                Захист
+                                                Protections
                                             </NavLink>
                                         </li>
                                     </ul>
                                 </MDBCol>
                                 <MDBCol sm="5" md="3" className='col-7  w-responsive p-md-0 p-sm-0 p-0 h-100 pl-sm-4'>
-                                    <h5 className="ml-3 ml-sm-0 title pl-lg-4 pl-md-4 pl-sm-3 text-left pl-4 pt-2 pt-2 pt-xl-4 pt-md-3 pt-sm-2">Контакти</h5>
+                                    <h5 className="ml-3 ml-sm-0 title pl-lg-4 pl-md-4 pl-sm-3 text-left pl-4 pt-2 pt-2 pt-xl-4 pt-md-3 pt-sm-2">Contacts</h5>
                                     <ul className='ml-3 ml-sm-0 pl-lg-4 pl-md-4 pl-sm-3 pl-4 text-left mb-0 h-100'>
                                         <li>
                                             <a href='https://goo.gl/maps/bzk1W5AZCec4QVR89' className='white-ic'>
-                                                    м.Київ, вул. Данченко 32 (вхід з двору)
+                                                    United Kingdom, Brighton
                                             </a>
                                         </li>
                                         <li>
-                                            <a href='#' className="list-unstyled pb-2" href='tel:+380735005533'>
-                                                <MDBIcon icon="phone-alt" className="green-text pr-1"/>+38 073 500 55 33
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href='#' className="list-unstyled pb-2" href='tel:+380985005533'>
-                                                <MDBIcon icon="phone-alt" className="green-text pr-1"/>+38 098 500 55 33
+                                            <a href='#' className="list-unstyled pb-2" href='tel:+447716134163'>
+                                                <MDBIcon icon="phone-alt" className="green-text pr-1"/>+44 771-6134-163
                                             </a>
                                         </li>
                                         <li>
                                             <a href='#' className="list-unstyled pb-2">
-                                                Графік роботи:
+                                                Work schedule:
                                             </a>
                                         </li>
                                         <li>
                                             <a href='#' className="list-unstyled pb-2">
-                                                09:00 - 20:00 (без вихідних)
+                                                09:00 - 20:00 MD-ST
                                             </a>
                                         </li>
                                         <MDBNavbarNav right inline className="border-0 footer-ic w-100 mb-0">
@@ -161,7 +151,7 @@ class ShopFooter extends Component  {
                         </MDBContainer>
                         <div className="footer-copyright text-center py-3 w-100 h-auto">
                             <MDBContainer style={{textAlign: 'center'}}>
-                                <a className="shop-salon w-75 d-inline-block" href="https://www.mdbootstrap.com"><span className='font-smaller'>&copy;  Copyright {new Date().getFullYear()} </span>   YVONNE BEAUTY COSMETICS SHOP - All Rights Reserved </a>
+                                <a className="shop-salon w-75 d-inline-block" href="https://www.mdbootstrap.com"><span className='font-smaller'>&copy;  Copyright {new Date().getFullYear()} </span>   SYRENE COSMETICS SHOP - All Rights Reserved </a>
                             </MDBContainer>
                         </div>
                     </MDBFooter>

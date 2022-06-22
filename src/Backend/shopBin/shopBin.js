@@ -69,7 +69,7 @@ class ShopBin extends React.Component {
                             <>
                         <form>
                             <label htmlFor="defaultFormCardNameEx" className="bin-label grey-text font-weight-light mb-1 pl-3">
-                                Товари
+                                Products
                             </label>
                         </form>
                         {this.state.Cart.map((product, index)=>(
@@ -86,8 +86,8 @@ class ShopBin extends React.Component {
                                 </form>
                             </MDBCol>
                             <MDBCol className='col-5 col-md-2 col-sm-3 px-3 py-1 mx-0'>
-                                <p className='px-lg-2 px-xl-2 px-md-0 px-sm-2 px-2 py-3'>{product.price}<span>грн</span></p>
-                                <p className='px-lg-2 px-xl-2 px-md-0 px-sm-2 px-2 py-3'>{product.price * product.count}<span>грн</span></p>
+                                <p className='px-lg-2 px-xl-2 px-md-0 px-sm-2 px-2 py-3'>{product.price}<span>GBP</span></p>
+                                <p className='px-lg-2 px-xl-2 px-md-0 px-sm-2 px-2 py-3'>{product.price * product.count}<span>GBP</span></p>
                             </MDBCol>
                             <MDBCol className='col-like p-1 py-2'>
                                 <button onClick={() => this.removeItem(index)} type="button" className="px-3 px-md-1 px-xl-3 px-lg-3 px-0 btn btn-m m-0 text-center bg-transparent border-0 z-depth-0 button-like">
@@ -98,7 +98,7 @@ class ShopBin extends React.Component {
                         ))}
                         </>
                         :
-                     <h1 className="text-center font-small">Корзина порожня!</h1>
+                     <h1 className="text-center font-small">Basket is empty!</h1>
                             }
                     </div>
                 </div>

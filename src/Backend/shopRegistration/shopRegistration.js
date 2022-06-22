@@ -32,7 +32,7 @@ function fetchRegister(_this){
             localStorage.setItem('user', JSON.stringify(data.user));
             _this.props.changeModalBody('successRgistration')
         }else{
-            _this.setState({alert:'Неверный логин или пароль'})
+            _this.setState({alert:'Uncorrect login and password!'})
             if(data.errors) _this.setState({errors: _this.getErrorsList(data.errors)})
         }
     });
@@ -95,23 +95,23 @@ class ShopRegistration extends Component  {
                             </ul>
                             <div className="form-row mb-4">
                                 <div className="col">
-                                    <input onChange={this.changeInputHandler} value={this.state.value.name} name="name"  type="text" id="defaultRegisterFormFirstName" className="mx-auto justify-content-center form-control form-aut" placeholder="Ім'я" />
+                                    <input onChange={this.changeInputHandler} value={this.state.value.name} name="name"  type="text" id="defaultRegisterFormFirstName" className="mx-auto justify-content-center form-control form-aut" placeholder="Name" />
                                 </div>
                                 <div className="col">
-                                    <input onChange={this.changeInputHandler} value={this.state.value.last_name} name="last_name" type="text" id="defaultRegisterFormLastName" className="mx-auto justify-content-center form-control form-aut" placeholder="Фамілія" />
+                                    <input onChange={this.changeInputHandler} value={this.state.value.last_name} name="last_name" type="text" id="defaultRegisterFormLastName" className="mx-auto justify-content-center form-control form-aut" placeholder="Surname" />
                                 </div>
                             </div>
-                            <input onChange={this.changeInputHandler} value={this.state.value.email} name="email"  type="email" id="defaultRegisterFormEmail" className="mx-auto justify-content-center w-100 form-control mb-4 form-reg" placeholder="Електронна пошта" />
-                            <input onChange={this.changeInputHandler} value={this.state.value.phone} name="phone" type="text" id="defaultRegisterPhonePassword" className="mx-auto justify-content-center form-control mb-4 form-reg" placeholder="Номер телефону" aria-describedby="defaultRegisterFormPhoneHelpBlock" />
-                            <input onChange={this.changeInputHandler} value={this.state.value.password} name="password" type="password" id="defaultRegisterFormPassword" className="mx-auto justify-content-center form-control form-reg" placeholder="Пароль" aria-describedby="defaultRegisterFormPasswordHelpBlock" />
+                            <input onChange={this.changeInputHandler} value={this.state.value.email} name="email"  type="email" id="defaultRegisterFormEmail" className="mx-auto justify-content-center w-100 form-control mb-4 form-reg" placeholder="Email" />
+                            <input onChange={this.changeInputHandler} value={this.state.value.phone} name="phone" type="text" id="defaultRegisterPhonePassword" className="mx-auto justify-content-center form-control mb-4 form-reg" placeholder="Telephone" aria-describedby="defaultRegisterFormPhoneHelpBlock" />
+                            <input onChange={this.changeInputHandler} value={this.state.value.password} name="password" type="password" id="defaultRegisterFormPassword" className="mx-auto justify-content-center form-control form-reg" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock" />
                             <small id="defaultRegisterFormPasswordHelpBlock" className="form-text text-muted mb-2">
-                                Щонайменше 8 літер латиницею
+                                At least 8 Latin letters
                             </small>
                             <a href='#' onClick={this.goToAuthorization} className='p-2 m-0 text-left w-100' >
-                                Авторизуватися
+                                Authorization
                              </a>
-                            <button onClick={this.registerSubmit} className="btn btn-reg font-weight-bold mb-4 mt-2 mx-0 w-100" type="button">Реєстрація</button>
-                            <p>В той час як ви натискаєте на<em> Реєстрація </em>, ви погоджуєтесь із<a href="/" target="_blank"> політикою конфіденційності</a>
+                            <button onClick={this.registerSubmit} className="btn btn-reg font-weight-bold mb-4 mt-2 mx-0 w-100" type="button">Registration</button>
+                            <p>By clicking on the button <em> Registration </em>, you agree to<a href="/" target="_blank"> Privacy Policy</a>
                             </p>
                         </form>
                     </div>

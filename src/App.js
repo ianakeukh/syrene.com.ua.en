@@ -37,6 +37,7 @@ import ShopMobileUpload from '../src/Backend/shopMobileUpload/shopMobileUpload';
 
 
 import Details from './Components/shopProducts/ITEMS/Davines/Item/Details';
+import ShopPayment from './Backend/shopOrder/CARD/shopPayment';
 
 import {Component} from 'react';
 
@@ -181,6 +182,9 @@ class App extends Component  {
                     </Route>
                     <Route path='/mobile'>
                         <Mobile />
+                    </Route>
+                    <Route path='/shopPayment'>
+                        <ShopPayment />
                     </Route>
                 </Switch>
                 <ShopFooter/>

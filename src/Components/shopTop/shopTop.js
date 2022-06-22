@@ -35,7 +35,7 @@ class ShopTop extends Component {
         isCartCircleModalOpened: false,
         isLoginModalOpened: false,
         modalBody: 'authorization', // registration
-        modalTitle: 'Авторизація',
+        modalTitle: 'Autorization',
         showProfileMenu: true,
         isSearchModalOpened: false,
         query: '',
@@ -77,9 +77,9 @@ class ShopTop extends Component {
         this.setState({modalBody: where_to_go})
 
         if (where_to_go === 'authorization') {
-            this.setState({modalTitle: 'Авторизація'})
+            this.setState({modalTitle: 'Autorization'})
         } else if (where_to_go === 'registration') {
-            this.setState({modalTitle: 'Регистрація'})
+            this.setState({modalTitle: 'Registration'})
         }
     }
 
@@ -144,6 +144,7 @@ class ShopTop extends Component {
     render() {
         return (
             <div className='shop-bg-nav'>
+               <div className='overflow-hidden'>
                 <div className='container m-auto justify-content-center px-0 h-100 py-2'>
                     <div className='w-100 d-block h-100'>
                       <div className='px-2 px-md-0 h-100'>
@@ -172,7 +173,6 @@ class ShopTop extends Component {
                               />
                           </div>
                           <div className='float-left py-1 py-sm-2 overflow-hidden'>
-
                               <img
                                   className='logo-bordo-flower-two overflow-hidden'
                                   src={require('../../img/catalogue/two.png')}
@@ -180,9 +180,8 @@ class ShopTop extends Component {
                               />
                           </div>
                           <div className='float-left py-1 py-sm-2 overflow-hidden'>
-
                               <img
-                                  className='logo-bordo-flower-four overflow-hidden'
+                                  className='logo-bordo-flower-four'
                                   src={require('../../img/catalogue/two.png')}
                                   alt='fl1'
                               />
@@ -229,8 +228,8 @@ class ShopTop extends Component {
                                     <i className="fas fa-cart-plus p-0"></i>
                                 </button>
                                 <MDBModal isOpen={this.state.isCartModalOpened} toggle={this.cartModalToggle}
-                                          className='pt-3 modal-bin mx-auto justify-content-center'>
-                                    <MDBModalHeader className='text-center justify-content-center my-0 my-sm-3'>Корзина
+                                          className='modal-bin-block mx-auto justify-content-center d-block'>
+                                    <MDBModalHeader className='text-center justify-content-center my-0 my-sm-3'>Basket
                                         <MDBBtn className='btn-x m-2 p-2 border-0   z-depth-0 position-absolute'
                                                 color="secondary" onClick={this.cartModalToggle}><i className="fas fa-times mr-2"></i>
                                         </MDBBtn>
@@ -240,13 +239,12 @@ class ShopTop extends Component {
                                     </MDBModalBody>
                                     <MDBModalFooter className='mx-0 mx-sm-5 p-0'>
                                         <MDBCol className='my-2 text-left order-price w-auto pr-0 w-100'><span
-                                            className='font-weight-small font-smaller'>Разом до сплати:  <span
-                                            className='font-weight-small'>{this.props.appState.cart.total_price}</span> грн</span></MDBCol>
+                                            className='font-weight-small font-smaller'>Total price:  <span
+                                            className='font-weight-small'>{this.props.appState.cart.total_price}</span> GBP</span></MDBCol>
                                         <div className='w-100 d-inline-flex flex-wrap m-0 justify-content-center'>
                                             <MDBBtn color="secondary" className='mb-2 mb-sm-0 mb-md-5 btn-pay'
-                                                    onClick={this.cartModalToggle}>ЗАКРИТИ</MDBBtn>
-                                            <Link to='/shopOrder'><MDBBtn color="primary" className='btn-pay mb-5'>ОФОРМИТИ
-                                                ЗАМОВЛЕННЯ</MDBBtn>
+                                                    onClick={this.cartModalToggle}>CLOSE</MDBBtn>
+                                            <Link to='/shopOrder'><MDBBtn color="primary" className='btn-pay mb-5'>Order</MDBBtn>
                                             </Link>
                                         </div>
                                     </MDBModalFooter>
@@ -258,8 +256,8 @@ class ShopTop extends Component {
                                     <MDBIcon className='heart-icon pr-0' icon='heart'/>
                                 </button>
                                 <MDBModal isOpen={this.state.isCartLikeModalOpened} toggle={this.cartLikeModalToggle}
-                                          className='pt-3 mx-auto justify-content-center'>
-                                    <MDBModalHeader className='text-center my-0 my-sm-3 justify-content-center'>Сподобалось
+                                          className='w-100 pt-3 mx-auto justify-content-center'>
+                                    <MDBModalHeader className='text-center my-0 my-sm-3 justify-content-center'>Preferences
                                         <MDBBtn className='btn-s m-2 p-2 border-0 z-depth-0 position-absolute'
                                                 color="secondary" onClick={this.cartLikeModalToggle}><i
                                             className="fas fa-times mr-2"></i></MDBBtn>
@@ -270,10 +268,9 @@ class ShopTop extends Component {
                                     <MDBModalFooter className='mx-0 mx-sm-5 p-0'>
                                         <div className='w-100 d-inline-flex flex-wrap m-0 justify-content-center'>
                                             <MDBBtn color="secondary" className='mb-2 mb-sm-0 mb-md-5 btn-pay'
-                                                    onClick={this.cartLikeModalToggle}>ЗАКРИТИ</MDBBtn>
+                                                    onClick={this.cartLikeModalToggle}>CLOSE</MDBBtn>
                                             <Link to='/shopOrder'>
-                                                <MDBBtn color="primary" className='btn-pay mb-5'>ОФОРМИТИ
-                                                    ЗАМОВЛЕННЯ</MDBBtn>
+                                                <MDBBtn color="primary" className='btn-pay mb-5'>Order</MDBBtn>
                                             </Link>
                                         </div>
                                     </MDBModalFooter>
@@ -283,6 +280,7 @@ class ShopTop extends Component {
                       </div>
                     </div>
                 </div>
+            </div>
             </div>
 
         )

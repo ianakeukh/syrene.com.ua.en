@@ -30,11 +30,11 @@ class VISA extends React.Component {
         return (
             <p>
                 <div className="container">
-                    <div className="row py-3 justify-content-center m-auto">
+                    <div className="row py-3 justify-content-center m-auto px-3">
                         <div className="panel-item col-xs-5 col-sm-6 col-md-6 col-lg-5 col-xl-4 col-6 z-depth-2 py-5 px-4 rgba-white-strong">
                             <div className="panel panel-default ">
                                 <div className="panel-heading">
-                                    <h2 className="panel-name green-text font-weight-bold text-left mb-0">Visa &<span className='blue-text'> Mastercard</span></h2>
+                                    <h2 className="panel-name green-text font-weight-bold mb-0">Visa &<span className='blue-text'> Mastercard</span></h2>
                                     <div className='payment-form pt-0' id="PaymentForm">
                                         <div
                                             number={this.state.number}
@@ -47,7 +47,7 @@ class VISA extends React.Component {
                                         <form>
                                             <div className="form-group mb-1">
                                                 <label htmlFor="cardNumber" className='pt-3 pb-0 mb-1'>CARD NUMBER</label>
-                                                <input className="order w-100 m-auto justify-content-center "
+                                                <input className="w-100 m-auto justify-content-center"
                                                        id="cardNumber"
                                                        type="tel"
                                                        pattern="[0-9\s]{13,19}"
@@ -57,15 +57,15 @@ class VISA extends React.Component {
                                                        onFocus={this.handleInputFocus}
                                                 />
                                             </div>
-                                            <div className="d-inline-flex pt-2">
+                                            <div className="d-inline-flex pt-2 w-100">
                                                 <div className="col-5 col-md-7 col-sm-7 p-0">
                                                     <div className="form-group">
                                                         <label htmlFor="expityMonth" className='mb-1'>
                                                             EXPIRY DATE</label>
-                                                        <div className='d-inline-flex'>
+                                                        <div className='d-inline-flex w-100'>
                                                             <div className="col-xs-5 col-lg-5 pl-ziro p-0 m-0">
                                                                 <input type="text"
-                                                                       className="w-100 order m-0"
+                                                                       className="w-100 m-0"
                                                                        id="expityMonth"
                                                                        placeholder="MM"
                                                                        maxLength="2"
@@ -77,7 +77,7 @@ class VISA extends React.Component {
                                                             </div>
                                                             <div className="col-xs-5 col-lg-5 pl-ziro p-0 m-0 ml-3 mr-0">
                                                                 <input type="text"
-                                                                       className="w-100 order m-0"
+                                                                       className="w-100 m-0"
                                                                        id="expityYear"
                                                                        placeholder="YY"
                                                                        maxLength="2"
@@ -95,7 +95,7 @@ class VISA extends React.Component {
                                                         <label htmlFor="cvCode" className='ml-3 mb-1'>
                                                             CV CODE</label>
                                                         <input type="text"
-                                                               className="w-100 order m-0"
+                                                               className="w-100 ml-3 ml-lg-0 m-0"
                                                                id="cvCode"
                                                                placeholder="CVV2" required
                                                                onChange={this.handleInputChange}
@@ -109,7 +109,7 @@ class VISA extends React.Component {
                                 </div>
                                 <ul className="nav nav-pills nav-stacked d-inline-flex w-100 pb-3">
                                     <li className="text-left w-50">Final Payment:</li>
-                                    <li className="text-right w-50">50<span> UAH</span></li>
+                                    <li className="text-right w-50">50<span> GBP</span></li>
                                 </ul>
                                 <br />
                                 <form method="POST" className='w-100' action="https://www.liqpay.ua/api/3/checkout"

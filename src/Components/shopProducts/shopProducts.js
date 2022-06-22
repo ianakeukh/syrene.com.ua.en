@@ -215,10 +215,9 @@ class ShopProducts extends Component  {
                     {/*products list*/}
                     <div className='shop-items right w-75 bg-white d-inline-block ml-0  pr-3 pr-xl-0 ml-xl-3 ml-sm-3 ml-lg-3 ml-md-3'>
                         <div className='shop-items-md bg-white'>
-                            <h4 className='text-center p-4 font-weight-bold'>Товари</h4>
+                            <h4 className='text-center p-4 font-weight-bold'>Products</h4>
                             <p className='shop-items-text grey-text text-center w-responsive mx-auto mb-5'>
-                                В нашому магазині представлений широкий вибір професійної косметики для волосся: шампуні для домашнього догляду та для професіного використання.
-                            </p>
+                                There are a huge variety of luxery products elite brands: shampoo, conditioners, oil and the others products.  </p>
                             { this.state.products.length ?
                             <MDBRow className='p-0 m-2 ml-0 border-0 products'>
                                 <div className='justify-content-between m-auto w-100'>
@@ -295,7 +294,7 @@ class ShopProducts extends Component  {
                             {/*products list*/}
                             <div className='z-index-5 shop-items pt-0 m-auto justify-content-center w-100 bg-white d-block  d-md-none'>
                                 <div className='shop-items-md bg-white '>
-                                    <h4 className='text-center px-4 py-1 font-weight-bold'>Товари</h4>
+                                    <h4 className='text-center px-4 py-1 font-weight-bold'>Products</h4>
                                     <p className='shop-items-text grey-text text-center mx-auto mb-5'>
                                         В нашому магазині представлений широкий вибір професійної косметики для волосся: шампуні для домашнього догляду та для професіного використання.
                                     </p>

@@ -22,7 +22,7 @@ class shopAboutShop extends Component {
         return (
             <div>
                 <div className='container'>
-                    <h4 className='h4-responsive text-center font-weight-bolder m-0 py-md-5 py-sm-5 py-4 py-xl-5 py-lg-5'>ПРО МАГАЗИН</h4>
+                    <h4 className='h4-responsive text-center font-weight-bolder m-0 py-md-5 py-sm-5 py-4 py-xl-5 py-lg-5'>ABOUT SHOP</h4>
                     <MDBCard className='d-inline-block mb-xl-5 mb-lg-4 mb-md-4 mb-sm-3 mb-2 border-0 z-index-0'>
                             <div className='d-block w-50 float-left text-center text-lg-left p-3'>
                                 <MDBContainer className='pt-1 w-100'>
@@ -66,51 +66,42 @@ class shopAboutShop extends Component {
                                 </MDBContainer>
                             </div>
                                 <div xl='10' md='11' size='10' sm='12'  className='px-sm-2 px-3 py-0 pt-2'>
-                                    <h5 className='font-weight-bold mb-3 pt-3'>Асортимент</h5>
+                                    <h5 className='font-weight-bold mb-3 pt-3'>Assortment</h5>
                                     <p className='black-text'>
-                                        Інтернет магазин YVONNE пропонує широкий асортимент продукції для догляду за волоссям та аксесуарами. Замовляти товари можливо як онлайн, так і зателефонувавши за номерами в контактах. Існує можливість замовити будь-який товар, який не представлений серед асортименту продукції. Магазин співпрацює із такими марками, як:
-                                        Choice, FarmaVita, ProfiStyle, Mirella, Davines, Joico, Schwarzkopf
+                                        Our shop Syrene range new and fashion products different brands from Italy, Spain, USA such brands as Choice, FarmaVita, ProfiStyle, Mirella, Davines, Joico, Schwarzkopf. You can order items by telephone or online. We will realise your order as soon as possible.
+
                                     </p>
                                 </div>
                                 <div xl='10' md='11' size='10' sm='12'  className='px-sm-2 px-3 py-0 pt-2'>
-                                    <h5 className='font-weight-bold mb-3'>Якість та послуги</h5>
+                                    <h5 className='font-weight-bold mb-3'>Quality</h5>
                                     <p className='black-text'>
-                                        Усі товари у магазині сертифіковані;<br/>
-                                        Консультанти оберуть для вас необхідний товар;<br/>
-                                        Відправлення товару відбувається швидко;<br/>
-                                        У магазині постійно діють <span className='red-text font-weight-bold'>АКЦІЇ</span>;<br/>
-                                        Наш магазин діє на основі салону краси ІВОН у місті Києві;<br/>
-                                        Постійно збільшується асортимент продукції.<br/>
-                                        Відправлення товаріз відбувається у будь-яку точкі України;<br/>
-                                        Магазин представляє продукцію Італійських та Українських брендів;<br/>
+                                        All products in the store are certified; <br/>
+                                        Consultants choose the product you need; <br/>
+                                        Shipment quickly; <br/>
+                                        The range of products is constantly increasing. <br/>
+                                        Shipment of goods takes place anywhere in United Kingdom; <br/>
+                                        The store presents products of Italian, Usa, Spanish; <br/>
                                     </p>
                                 </div>
                                 <div xl='12' md='12' size='12' sm='12'  className='px-sm-2 px-3 py-0 pt-2'>
-                                    <h5 className='font-weight-bold mb-3'>Замовлення</h5>
+                                    <h5 className='font-weight-bold mb-3'>Order</h5>
                                     <p className='black-text'>
-                                        Замовлення можливо здійснити як через особистий кабінет, так і зателефонувавши нам номерами, вказаними у контактах. Також є можливість відвідати нам салон краси та магазин Івон за наступними реквізитами:
+                                         To order products you must call our internet shop or make it online.
                                         <li className="list-unstyled pt-xl-3 pt-3 w-100">
-                                            <a href="#!"><MDBIcon icon="home" className="green-text pr-3"/><span className='black-text w-75 font-small'>м.Київ, вул. Данченко 32</span></a>
+                                            <a href="#!"><MDBIcon icon="home" className="green-text pr-3"/><span className='black-text w-75 font-small'>Brighton, United Kingdom</span></a>
                                         </li>
                                         <li className="list-unstyled">
-                                            <a href="#!"><span className='w-75 font-small purple-text font-weight-bold'>ЗАТЕЛЕФОНУЙТЕ НАМ!</span></a>
-                                        </li>
-                                        <li className="list-unstyled">
-                                            <a href="tel:+380735005533"><MDBIcon icon="phone-alt" className="green-text pr-3"/><span className='green-text w-75 font-small'>+38 073 500 55 33</span></a>
-                                        </li>
-                                        <li className="list-unstyled">
-                                            <a href="tel:+380985005533"><MDBIcon icon="phone-alt" className="green-text pr-3"/><span className='green-text w-75 font-small'>+38 098 500 55 33</span></a>
+                                            <a href="tel:+447716134163"><MDBIcon icon="phone-alt" className="green-text pr-3"/><span className='green-text w-75 font-small'>+44 771-6134-163</span></a>
                                         </li>
                                     </p>
                                 </div>
                         <div className="mdb-lightbox no-margin mb-lg-5 mb-xl-5 mb-md-5 mb-sm-2 mb-1 mx-0 pt-3 pr-0">
                             <h5 className='font-weight-bold text-center w-100'>Наш салон-магазин YVONNE</h5>
                             <MDBRow className='pt-3 pt-sm-5 p-0 w-100 m-0'>
-                                <MDBCol md="4" className='p-2 w-100'>
-
+                                <MDBCol md="4"  sm="4"  className='p-2 w-100'>
                                     <figure>
                                         <img
-                                            src={require('./../../../img/salon6.jpg')}
+                                            src={require('./../../../img/photos/IMG_4228-scaled.webp')}
                                             alt="Gallery"
                                             className="img-fluid w-100"
                                             onClick={() =>
@@ -120,10 +111,10 @@ class shopAboutShop extends Component {
                                         />
                                     </figure>
                                 </MDBCol>
-                                <MDBCol md="4" className='p-2 w-100'>
+                                <MDBCol md="4"  sm="4"  className='p-2 w-100'>
                                     <figure>
                                         <img
-                                            src={require('./../../../img/salon2.jpg')}
+                                            src={require('./../../../img/photos/Felps-Color-Premium-RP-Reconstruction-Treatment-2x500mL.webp')}
                                             alt="Gallery"
                                             className="img-fluid"
                                             onClick={() =>
@@ -133,10 +124,10 @@ class shopAboutShop extends Component {
                                         />
                                     </figure>
                                 </MDBCol>
-                                <MDBCol md="4" className='p-2 w-100'>
+                                <MDBCol md="4"  sm="4"  className='p-2 w-100'>
                                     <figure>
                                         <img
-                                            src={require('./../../../img/salon1.jpg')}
+                                            src={require('./../../../img/photos/bau_september_2020_joico_group_0008 (1)__20285.original.jpg')}
                                             alt="Gallery"
                                             className="img-fluid"
                                             onClick={() =>
@@ -146,10 +137,22 @@ class shopAboutShop extends Component {
                                         />
                                     </figure>
                                 </MDBCol>
-                                <MDBCol md="4" className='p-2 w-100'>
+                                <MDBCol md="4"  sm="4"  className='p-2 w-100'>
                                     <figure>
                                         <img
-                                            src={require('./../../../img/salon10.JPG')}
+                                            src={require('./../../../img/photos/D_NQ_NP_734324-MLM43957318326_102020-O.jpg')}
+                                            alt="Gallery"
+                                            className="img-fluid"
+                                            onClick={() =>
+                                                this.setState({ photoIndex: 8, isOpen: true })
+                                            }
+                                        />
+                                    </figure>
+                                </MDBCol>
+                                <MDBCol md="4"  sm="4"  className='p-2 w-100'>
+                                    <figure>
+                                        <img
+                                            src={require('./../../../img/photos/slider1-1.jpg')}
                                             alt="Gallery"
                                             className="img-fluid"
                                             onClick={() =>
@@ -159,10 +162,10 @@ class shopAboutShop extends Component {
                                         />
                                     </figure>
                                 </MDBCol>
-                                <MDBCol md="4" className='p-2 w-100'>
+                                <MDBCol md="4"  sm="4"  className='p-2 w-100'>
                                     <figure>
                                         <img
-                                            src={require('./../../../img/salon3.jpg')}
+                                            src={require('./../../../img/photos/blonde-life-home-page-slider.jpg')}
                                             alt="Gallery"
                                             className="img-fluid"
                                             onClick={() =>
@@ -172,10 +175,10 @@ class shopAboutShop extends Component {
                                         />
                                     </figure>
                                 </MDBCol>
-                                <MDBCol md="4" className='p-2 w-100'>
+                                <MDBCol md="4"  sm="4"  className='p-2 w-100'>
                                     <figure>
                                         <img
-                                            src={require('./../../../img/salon9.JPG')}
+                                            src={require('./../../../img/photos/Photo-by-PROF.KOSMETIKA-DLYA-VOLOS-on-_2_.jpg')}
                                             alt="Gallery"
                                             className="img-fluid"
                                             onClick={() =>
@@ -185,10 +188,10 @@ class shopAboutShop extends Component {
                                         />
                                     </figure>
                                 </MDBCol>
-                                <MDBCol md="4" className='p-2 w-100'>
+                                <MDBCol md="4" sm="4" className='p-2 w-100'>
                                     <figure>
                                         <img
-                                            src={require('./../../../img/salon4.jpg')}
+                                            src={require('./../../../img/photos/8b5f9c6765fe761c575b9e2c1690139a.jpg')}
                                             alt="Gallery"
                                             className="img-fluid"
                                             onClick={() =>
@@ -197,26 +200,14 @@ class shopAboutShop extends Component {
                                         />
                                     </figure>
                                 </MDBCol>
-                                <MDBCol md="4" className='p-2 w-100'>
+                                <MDBCol md="4"  sm="4" className='p-2 w-100'>
                                     <figure>
                                         <img
-                                            src={require('./../../../img/salon8.JPG')}
+                                            src={require('./../../../img/photos/felps_professional_rp_premium_tratamento_de_reconstrucao_capilar_2x_500ml_1801_3_20200923013824.webp')}
                                             alt="Gallery"
                                             className="img-fluid"
                                             onClick={() =>
                                                 this.setState({ photoIndex: 7, isOpen: true })
-                                            }
-                                        />
-                                    </figure>
-                                </MDBCol>
-                                <MDBCol md="4" className='p-2 w-100'>
-                                    <figure>
-                                        <img
-                                            src={require('./../../../img/salon5.jpg')}
-                                            alt="Gallery"
-                                            className="img-fluid"
-                                            onClick={() =>
-                                                this.setState({ photoIndex: 8, isOpen: true })
                                             }
                                         />
                                     </figure>

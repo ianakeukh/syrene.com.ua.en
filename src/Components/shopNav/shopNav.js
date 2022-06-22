@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './shopNav.css'
 import './../../Backend/shopBin/shopBin.css'
 import {Link, NavLink} from 'react-router-dom';
+
 import {
     MDBModal,
     MDBModalHeader,
@@ -31,7 +32,6 @@ import Mobile from './../../Backend/shopMobile/Mobile'
 
 
 class ShopNav extends Component  {
-
 
     // name: 'app',
     // components: {
@@ -124,9 +124,9 @@ class ShopNav extends Component  {
                                      appState={this.props.appState}
                                      setUserData={this.props.setUserData} />
         }else if(this.state.modalBody === 'successRgistration'){
-            return <div>Ви успішно зареєструвалися!</div>
+            return <div>You are successfully registered!</div>
         }else{
-            return <div>Виникла помилка!</div>
+            return <div>An error has occurred!</div>
         }
     }
 
@@ -146,11 +146,11 @@ class ShopNav extends Component  {
             return (
                 <React.Fragment>
                         <ul className="profile-menu p-3 z-depth-5">
-                            <li><Link to="/shopAccount" className='pm-link font-weight-bold'>Профіль</Link></li>
-                            <li><Link to="/myOrders" className='pm-link'>Замовлення</Link></li>
-                            <li><Link to="/thatLike" className='pm-link'>Сподобалось</Link></li>
-                            <li><Link to="/haveSeen" className='pm-link'>Переглянуті</Link></li>
-                            <li onClick={this.logout}><Link className='pm-link white-ic'>Вихід</Link></li>
+                            <li><Link to="/shopAccount" className='pm-link font-weight-bold'>Profile</Link></li>
+                            <li><Link to="/myOrders" className='pm-link'>Order</Link></li>
+                            <li><Link to="/thatLike" className='pm-link'>Preferences</Link></li>
+                            <li><Link to="/haveSeen" className='pm-link'>Viewed</Link></li>
+                            <li onClick={this.logout}><Link className='pm-link white-ic'>Exit</Link></li>
                         </ul>
                 </React.Fragment>
             )
@@ -213,25 +213,27 @@ class ShopNav extends Component  {
                             <div className='container'>
                                 <MDBNavbarNav left className='p-2'>
                                     <MDBNavItem active>
-                                        <Link to='/'  className='nav-text white-text text-decoration-none d-inline p-4 pl-lg-2 p-md-0 pr-md-2 font-weight-normal'>Головна</Link>
+                                        <Link to='/'  className='nav-text white-text text-decoration-none d-inline p-4 pr-4 font-weight-normal'>Main</Link>
                                     </MDBNavItem>
                                     <MDBNavItem>
-                                        <Link to='/shopAboutShop' className='nav-text white-text text-decoration-none d-inline p-3 p-md-0 pr-md-2 font-weight-normal pl-lg-2'>Про магазин</Link>
+                                        <Link to='/shopAboutShop' className='nav-text white-text text-decoration-none d-inline px-4 p-3 font-weight-normal'>About</Link>
                                     </MDBNavItem>
                                     <MDBNavItem>
-                                        <Link to='/shopContacts' className='nav-text white-text text-decoration-none d-inline p-3 p-md-0 pr-md-2 font-weight-normal pl-lg-3'>Контакти</Link>
+                                        <Link to='/shopContacts' className='nav-text white-text text-decoration-none d-inline p-3 px-4 font-weight-normal'>Contacts</Link>
                                     </MDBNavItem>
                                 </MDBNavbarNav>
-                                <p className='nav-text adr white-text text-decoration-none d-inline pt-3 p-3 m-0 pr-md-2 font-weight-normal font-small font-weight-lighter'>
-                                    <a href='tel:+380735005533' className='tell white-ic font-weight-bold'> +38 073 500 55 33 </a>
+                                <p className='m-auto nav-text adr white-text text-decoration-none d-inline pt-3 p-3 m-0 pr-md-2 font-weight-normal font-small font-weight-lighter'>
+                                    <a href='tel:+447716134163' className='white-ic font-weight-normal'> +44 771-6134-163</a>
                                 </p>
-                                <p className='nav-text adr white-text text-decoration-none d-inline pt-3 p-3 m-0 font-weight-normal font-small font-weight-lighter'>
-                                    <a href='tel:+380935005533' className='tell white-ic font-weight-bold'> +38 093 500 55 33 </a>
+                                <p className='m-auto nav-text white-text text-decoration-none d-inline pt-3 p-3 m-0 font-weight-normal font-small font-weight-lighter'>
+                                    <a href='https://goo.gl/maps/KPCnQhqHvVRCh2Go8' className='white-ic'>  United Kingdom, Brighton</a>
                                 </p>
-                                {/*<p className='nav-text adr white-text text-decoration-none d-inline pt-3 p-3 m-0 font-weight-normal font-small font-weight-lighter'>вул.*/}
-                                {/*    <a href='https://goo.gl/maps/bzk1W5AZCec4QVR89' className='white-ic'> Данченко 32, м. Київ </a>*/}
-                                {/*    </p>*/}
                                 <MDBNavbarNav right className='nav-hidden'>
+                                    <MDBNavItem className='w-25 d-inline px-3 py-3 pt-2 pb-2 white-text'>
+                                        {/*<a href='https://www.facebook.com/yvonnemultibrands/?modal=suggested_action&notif_id=1606398322385544&notif_t=page_user_activity&ref=notif'   className='white-ic icon'>*/}
+                                        {/*    <MDBIcon fab icon='facebook-f'/>*/}
+                                        {/*</a>*/}
+                                    </MDBNavItem>
                                     <MDBNavItem className='w-25 d-inline px-3 py-3 pt-2 pb-2 white-text'>
                                         <a href='https://www.facebook.com/yvonnemultibrands/?modal=suggested_action&notif_id=1606398322385544&notif_t=page_user_activity&ref=notif'   className='white-ic icon'>
                                             <MDBIcon fab icon='facebook-f'/>
@@ -249,37 +251,37 @@ class ShopNav extends Component  {
                                             </a>
                                         </Link>
                                     </MDBNavItem>
-                                    <div className='w-100 profile-menu-block'>
-                                        <div>
-                                            {!this.state.auth ?
-                                                <button onClick={this.loginModalToggle}
-                                                        className='w-100 d-inline p-3 pr-md-2 pl-md-1 pt-2 pb-2 white-text btn-circle bg-transparent'>
-                                                    <MDBIcon icon='user-circle' className='border-left pl-3 pr-0 pt-0'/>
-                                                </button> :
-                                                <button
-                                                    className='w-100 d-inline p-3 pr-md-2 pl-md-1 pt-2 pb-2 white-text btn-circle bg-transparent'>
-                                                    <MDBIcon icon='user-circle' className='border-left pl-3 pr-0 pt-0'/>
-                                                </button>
-                                            }
-                                            <MDBModal className='z-depth-0 modal-autorization justify-content-center mx-auto mt-4' isOpen={this.state.isLoginModalOpened}
-                                                      toggle={this.loginModalToggle}>
-                                                <MDBModalHeader className='text-center justify-content-center mt-3 mb-0'>{this.state.modalTitle}
-                                                    <MDBBtn className='btn-aut m-2 p-2 border-0 position-absolute z-depth-0' color="secondary"
-                                                            onClick={this.loginModalToggle}><i className="fas fa-times mr-2"></i></MDBBtn>
+                                    {/*<div className='w-100 profile-menu-block'>*/}
+                                    {/*    <div>*/}
+                                    {/*        {!this.state.auth ?*/}
+                                    {/*            <button onClick={this.loginModalToggle}*/}
+                                    {/*                    className='w-100 d-inline p-3 pr-md-2 pl-md-1 pt-2 pb-2 white-text btn-circle bg-transparent'>*/}
+                                    {/*                <MDBIcon icon='user-circle' className='border-left pl-3 pr-0 pt-0'/>*/}
+                                    {/*            </button> :*/}
+                                    {/*            <button*/}
+                                    {/*                className='w-100 d-inline p-3 pr-md-2 pl-md-1 pt-2 pb-2 white-text btn-circle bg-transparent'>*/}
+                                    {/*                <MDBIcon icon='user-circle' className='border-left pl-3 pr-0 pt-0'/>*/}
+                                    {/*            </button>*/}
+                                    {/*        }*/}
+                                    {/*        <MDBModal className='z-depth-0 modal-autorization justify-content-center mx-auto mt-4' isOpen={this.state.isLoginModalOpened}*/}
+                                    {/*                  toggle={this.loginModalToggle}>*/}
+                                    {/*            <MDBModalHeader className='text-center justify-content-center mt-3 mb-0'>{this.state.modalTitle}*/}
+                                    {/*                <MDBBtn className='btn-aut m-2 p-2 border-0 position-absolute z-depth-0' color="secondary"*/}
+                                    {/*                        onClick={this.loginModalToggle}><i className="fas fa-times mr-2"></i></MDBBtn>*/}
 
 
-                                                </MDBModalHeader>
-                                                <MDBModalBody className='h-100 modal-body z-depth-0'>
-                                                    {this.modalBody()}
-                                                </MDBModalBody>
-                                            </MDBModal>
-                                        </div>
-                                        <div className='position-absolute profile-menu-info' id='pm-info'>
-                                            <div className='pr-menu-link'>
-                                                  {this.profileMenu()}
-                                            </div>
-                                        </div>
-                                    </div>
+                                    {/*            </MDBModalHeader>*/}
+                                    {/*            <MDBModalBody className='h-100 modal-body z-depth-0'>*/}
+                                    {/*                {this.modalBody()}*/}
+                                    {/*            </MDBModalBody>*/}
+                                    {/*        </MDBModal>*/}
+                                    {/*    </div>*/}
+                                    {/*    <div className='position-absolute profile-menu-info' id='pm-info'>*/}
+                                    {/*        <div className='pr-menu-link'>*/}
+                                    {/*              {this.profileMenu()}*/}
+                                    {/*        </div>*/}
+                                    {/*    </div>*/}
+                                    {/*</div>*/}
                                 </MDBNavbarNav>
                                 <div>{this.profileName()}</div>
                             </div>
@@ -333,16 +335,13 @@ class ShopNav extends Component  {
                                 >
                                     <MDBNavbarNav left className='d-block py-1'>
                                         <MDBNavItem active>
-                                            <MDBNavLink onClick={this.toggleCollapse('navbarCollapse1')} to='/' exact className='pl-3 p-0 font-weight-normal text-white tgl-item'>Головна</MDBNavLink>
+                                            <MDBNavLink onClick={this.toggleCollapse('navbarCollapse1')} to='/' exact className='pl-3 p-0 font-weight-normal text-white tgl-item'>Main</MDBNavLink>
                                         </MDBNavItem>
                                         <MDBNavItem>
-                                            <MDBNavLink onClick={this.toggleCollapse('navbarCollapse1')} to='/shopAboutShop' className='pl-3 p-0 font-weight-normal text-white tgl-item'>Про магазин</MDBNavLink>
+                                            <MDBNavLink onClick={this.toggleCollapse('navbarCollapse1')} to='/shopAboutShop' className='pl-3 p-0 font-weight-normal text-white tgl-item'>About shop</MDBNavLink>
                                         </MDBNavItem>
                                         <MDBNavItem>
-                                            <MDBNavLink onClick={this.toggleCollapse('navbarCollapse1')} to='/shopContacts' className='pl-3 p-0 font-weight-normal text-white tgl-item'>Контакти</MDBNavLink>
-                                        </MDBNavItem>
-                                        <MDBNavItem>
-                                            <MDBNavLink onClick={this.toggleCollapse('navbarCollapse1')} to='#!' className='pl-3 p-0 font-weight-normal text-white tgl-item'>До салону краси</MDBNavLink>
+                                            <MDBNavLink onClick={this.toggleCollapse('navbarCollapse1')} to='/shopContacts' className='pl-3 p-0 font-weight-normal text-white tgl-item'>Contacts</MDBNavLink>
                                         </MDBNavItem>
                                     </MDBNavbarNav>
                                 </MDBCollapse>

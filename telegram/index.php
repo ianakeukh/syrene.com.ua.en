@@ -5,10 +5,7 @@ header('Access-Control-Allow-Methods: POST');
 
 include 'AqsBot.class.php';
 
-
-$to_me = '1154508851';
-$to_yvonne = '-1001438149283';
-$to_yvonneshop = '-1001283370596'
+$to_syreneshop = '5537513329'
 
 if (isset($_POST['send-telegram'])) {
 	$message = '
@@ -18,6 +15,6 @@ phone: '.$_POST['phone'].'
 company: '.$_POST['company'].'
 message: '.$_POST['message'];
 $message = substr($message, 0, 4000);
-	$res = AqsBot::setChatId($to_yvonneshop)->sendMessage($message);
+	$res = AqsBot::setChatId($to_syreneshop)->sendMessage($message);
 	echo $res;
 }

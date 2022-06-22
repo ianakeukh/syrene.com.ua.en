@@ -197,7 +197,7 @@ class ShopAccount extends Component {
                 )
         }else return (
             <MDBContainer className='pb-0 pb-sm-5'>
-                <h4 className='h4-responsive text-center font-weight-bolder m-0 py-md-5 py-sm-5 py-4 py-xl-5 py-lg-5'>Особистий кабінет</h4>
+                <h4 className='h4-responsive text-center font-weight-bolder m-0 py-md-5 py-sm-5 py-4 py-xl-5 py-lg-5'>My account</h4>
                 <MDBRow className='p-0 w-100 m-0'>
                     <MDBCol md="12" className='p-0 w-100'>
                         <MDBNav
@@ -212,7 +212,7 @@ class ShopAccount extends Component {
                                     onClick={this.togglePills("content", "1")}
                                     className='font-weight-bold black-text rgba-grey-light p-3 m-0 nav-links '
                                 >
-                                    ПРОФІЛЬ
+                                    PROFILE
                                 </MDBNavLink>
                             </MDBNavItem>
                             <MDBNavItem className='p-0'>
@@ -223,7 +223,7 @@ class ShopAccount extends Component {
                                     onClick={this.togglePills("content", "2")}
                                     className='font-weight-bold black-text rgba-grey-light p-3  m-0 nav-links'
                                 >
-                                    ЗАМОВЛЕННЯ
+                                    ORDER
                                 </MDBNavLink>
                             </MDBNavItem>
                             <MDBNavItem className='p-0'>
@@ -234,7 +234,7 @@ class ShopAccount extends Component {
                                     onClick={this.togglePills("content", "3")}
                                     className='font-weight-bold black-text rgba-grey-light p-3 nav-links'
                                 >
-                                    СПОДОБАЛОСЬ
+                                    LIKE
                                 </MDBNavLink>
                             </MDBNavItem>
                             <MDBNavItem className='p-0'>
@@ -245,7 +245,7 @@ class ShopAccount extends Component {
                                     onClick={this.togglePills("content", "4")}
                                     className='font-weight-bold black-text rgba-grey-light p-3 nav-links'
                                 >
-                                    ПЕРЕГЛЯНУТІ
+                                    REVISED
                                 </MDBNavLink>
                             </MDBNavItem>
                         </MDBNav>
@@ -253,14 +253,14 @@ class ShopAccount extends Component {
                             <MDBTabPane tabId="1" className='p-2'>
                                 <p className='pt-3' style={{textAlign:'center',color:'green'}}>{this.state.alertTab1}</p>
                                 <div className='py-0 py-sm-0 pb-3'>
-                                    <h4 className='py-0'>Особисті дані</h4>
+                                    <h4 className='py-0'>Information</h4>
                                     <div col='12' className='d-inline-flex flex-wrap w-100 info-pain'>
                                         <div className='p-2 p-sm-3 col-12 col-sm-3'>
-                                            <p>Ім'я</p>
+                                            <p>Nama</p>
                                             <p><input className='w-100' onChange={this.changeInputHandler} /></p>
                                         </div>
                                         <div className='p-2 p-sm-3 col-12 col-sm-3'>
-                                            <p>Прізвище</p>
+                                            <p>Surname</p>
                                             <p><input className='w-100' onChange={this.changeInputHandler} name="last_name" /></p>
                                         </div>
                                         <div className='py-3 px-2 py-0 py-sm-0 px-sm-3 col-6 col-sm-3 d-block m-auto mr-0 float-right'>
@@ -269,10 +269,10 @@ class ShopAccount extends Component {
                                     </div>
                                 </div>
                                 <div className='py-0 py-sm-3 pb-3'>
-                                    <h4 className='py-3'>Контактні дані</h4>
+                                    <h4 className='py-3'>Contacts</h4>
                                     <div col='12' className='d-inline-flex flex-wrap  w-100 info-pain'>
                                         <div className='p-2 p-sm-3 col-12 col-sm-3'>
-                                            <p>Телефон</p>
+                                            <p>Mobile phone</p>
                                             <p><input className='w-100' onChange={this.changeInputHandler} name="phone" /></p>
                                         </div>
                                         <div className='p-2 p-sm-3 col-12 col-sm-3'>
@@ -280,44 +280,37 @@ class ShopAccount extends Component {
                                             <p><input className='w-100' onChange={this.changeInputHandler} name="email"/></p>
                                         </div>
                                         <div className='py-3 px-2 py-0 py-sm-0 px-sm-3 col-6 col-sm-3 d-block m-auto float-right'>
-                                            <button onClick={this.saveUserData} className='d-block m-auto float-right border-0 p-2 mt-2 mb-2 my-sm-5 w-100 rgba-grey-light white-ic'>Зберегти</button>
+                                            <button onClick={this.saveUserData} className='d-block m-auto float-right border-0 p-2 mt-2 mb-2 my-sm-5 w-100 rgba-grey-light white-ic'>Save</button>
                                         </div>
                                     </div>
                                 </div>
                                 <div className='py-0 py-sm-3 pb-3'>
-                                    <h4 className='py-3'>Адреса доставки</h4>
+                                    <h4 className='py-3'>Shipment adress</h4>
                                     <div col='12' className='d-inline-flex flex-wrap  w-100 info-pain'>
                                         <div className='p-2 p-sm-3 col-12 col-sm-3'>
-                                            <p>Місто</p>
-                                            <p><input className='w-100' onChange={this.changeInputHandler} name="city"/></p>
+                                            <p>Phone</p>
+                                            <p><input className='w-100' onChange={this.changeInputHandler} name="phone"/></p>
                                         </div>
                                         <div className='p-2 p-sm-3 col-12 col-sm-3'>
-                                            <p>Вулиця</p>
-                                            <p><input className='w-100' onChange={this.changeInputHandler} name="street"/></p>
-                                        </div>
-                                        <div className='p-2 p-sm-3 col-12 col-sm-3'>
-                                            <p>Будинок</p>
-                                            <p><input className='w-100' onChange={this.changeInputHandler} name="house" /></p>
-                                        </div>
-                                        <div className='py-3 px-2 py-0 py-sm-0 px-sm-3 col-6 col-sm-3 d-block m-auto float-right'>
-                                            <button onClick={this.saveUserData} className='d-block m-auto float-right border-0 p-2 mt-2 mb-2 my-sm-5 w-100 rgba-grey-light white-ic'>Зберегти</button>
+                                            <p>Email</p>
+                                            <p><input className='w-100' onChange={this.changeInputHandler} name="email"/></p>
                                         </div>
                                     </div>
                                 </div>
                                 <div className='py-0 py-sm-3 pb-3'>
-                                    <h4 className='py-3 m-0'>Изменение пароля</h4>
+                                    <h4 className='py-3 m-0'>Change password</h4>
                                     <p style={{color:'red'}}>{this.state.changePasswordError}</p>
                                     <div col='12' className='d-inline-flex flex-wrap w-100 info-pain'>
                                         <div className='p-2 p-sm-3 col-12 col-sm-3'>
-                                            <p>Старий пароль</p>
+                                            <p>Old password</p>
                                             <p><input className='w-100'  type="password" onChange={this.changePasswordInputHandler} name="old" value={this.state.passwordInputs.old}/></p>
                                         </div>
                                         <div className='p-2 p-sm-3 col-12 col-sm-3'>
-                                            <p>Новий пароль</p>
+                                            <p>New password</p>
                                             <p><input className='w-100' type="password" onChange={this.changePasswordInputHandler} name="new" value={this.state.passwordInputs.new}/></p>
                                         </div>
                                         <div className='p-2 p-sm-3 col-12 col-sm-3'>
-                                            <p>Новий пароль</p>
+                                            <p>New password</p>
                                             <p><input className='w-100' type="password" onChange={this.changePasswordInputHandler} name="confirm" value={this.state.passwordInputs.confirm}/></p>
                                         </div>
                                         <div className='py-3 px-2 py-0 py-sm-0 px-sm-3 col-6 col-sm-3 d-block m-auto float-right'>
@@ -328,7 +321,7 @@ class ShopAccount extends Component {
                             </MDBTabPane>
                             <MDBTabPane tabId="2" className='p-2'>
                                         <div className='py-3'>
-                                            <h4 className='py-3'>Замовлені товари:</h4>
+                                            <h4 className='py-3'>Your order:</h4>
                                             <div col='12' className='d-inline-flex w-100 info-pain'>
                                                 <div className="form-input d-inline-flex w-100 py-4 w-responsive p-3">
                                                     <div className='bg-white h-100 border-0'>
@@ -348,8 +341,8 @@ class ShopAccount extends Component {
                                                                             </form>
                                                                         </MDBCol>
                                                                         <MDBCol className='col-5 col-md-2 col-sm-3 px-3 py-1 mx-0'>
-                                                                            <p className='px-lg-2 px-xl-2 px-md-0 px-sm-2 px-2 py-3'>{product.price}<span>грн</span></p>
-                                                                            <p className='px-lg-2 px-xl-2 px-md-0 px-sm-2 px-2 py-3'>{product.price * product.count}<span>грн</span></p>
+                                                                            <p className='px-lg-2 px-xl-2 px-md-0 px-sm-2 px-2 py-3'>{product.price}<span> GBP</span></p>
+                                                                            <p className='px-lg-2 px-xl-2 px-md-0 px-sm-2 px-2 py-3'>{product.price * product.count}<span> GBP</span></p>
                                                                         </MDBCol>
                                                                         <MDBCol className='col-like p-1 py-2'>
                                                                             <button onClick={() => this.removeItem(index)} type="button" className="px-3 px-md-1 px-xl-3 px-lg-3 px-0 btn btn-m m-0 text-center bg-transparent border-0 z-depth-0 button-like">
@@ -360,21 +353,20 @@ class ShopAccount extends Component {
                                                                 ))}
                                                             </>
                                                             :
-                                                            <h1 className="text-center font-small">Корзина порожня!</h1>
+                                                            <h1 className="text-center font-small">Basket empty!</h1>
                                                         }
                                                     </div>
                                                 </div>
                                             </div>
                                             <div className='shop-bin'>
-                                                <Link to='/shopOrder'><MDBBtn color="primary" className='btn-pay'>ОФОРМИТИ
-                                                    ЗАМОВЛЕННЯ</MDBBtn>
+                                                <Link to='/shopOrder'><MDBBtn color="primary" className='btn-pay'>Place an order</MDBBtn>
                                                 </Link>
                                             </div>
                                         </div>
                             </MDBTabPane>
                             <MDBTabPane tabId="3" className='p-2'>
                                 <div className='py-3'>
-                                    <h4 className='py-3'>Товари, що сподобались:</h4>
+                                    <h4 className='py-3'>Preferences:</h4>
                                     <div col='12' className='d-inline-flex w-100 info-pain'>
                                         <div className="form-input d-inline-flex w-100 py-4 w-responsive p-3">
                                             <div className='bg-white h-100 border-0'>
@@ -382,7 +374,7 @@ class ShopAccount extends Component {
                                             <>
                                                 <form>
                                                     <label htmlFor="defaultFormCardNameEx" className="bin-label grey-text font-weight-light mb-1 pl-3">
-                                                        Товари
+                                                        Products
                                                     </label>
                                                 </form>
                                                 {this.state.Like.map((product, index)=>(
@@ -399,8 +391,8 @@ class ShopAccount extends Component {
                                                             </form>
                                                         </MDBCol>
                                                         <MDBCol className='col-5 col-md-2 col-sm-3 px-3 py-1 mx-0'>
-                                                            <p className='px-lg-2 px-xl-2 px-md-0 px-sm-2 px-2 py-3'>{product.price}<span>грн</span></p>
-                                                            <p className='px-lg-2 px-xl-2 px-md-0 px-sm-2 px-2 py-3'>{product.price * product.count}<span>грн</span></p>
+                                                            <p className='px-lg-2 px-xl-2 px-md-0 px-sm-2 px-2 py-3'>{product.price}<span> GBP</span></p>
+                                                            <p className='px-lg-2 px-xl-2 px-md-0 px-sm-2 px-2 py-3'>{product.price * product.count}<span> GBP</span></p>
                                                         </MDBCol>
                                                         <MDBCol className='col-like p-1 py-2'>
                                                             <button onClick={() => this.removeItemLike(index)} type="button" className="px-3 px-md-1 px-xl-3 px-lg-3 px-0 btn btn-m m-0 text-center bg-transparent border-0 z-depth-0 button-like">
@@ -411,21 +403,20 @@ class ShopAccount extends Component {
                                                 ))}
                                             </>
                                             :
-                                            <h1 className="text-center font-small">Товари відсутні!</h1>
+                                            <h1 className="text-center font-small">Basket empty!</h1>
                                         }
                                        </div>
                                       </div>
                                     </div>
                                     <div className='shop-bin'>
-                                        <Link to='/shopOrder'><MDBBtn color="primary" className='btn-pay'>ОФОРМИТИ
-                                            ЗАМОВЛЕННЯ</MDBBtn>
+                                        <Link to='/shopOrder'><MDBBtn color="primary" className='btn-pay'>PLACE AN ORDER</MDBBtn>
                                         </Link>
                                     </div>
                                 </div>
                             </MDBTabPane>
                             <MDBTabPane tabId="4" className='p-2'>
                                 <div className='py-3'>
-                                    <h4 className='py-3'>Ви переглядали наступні товари:</h4>
+                                    <h4 className='py-3'>You have viewed the following products:</h4>
                                     <div col='12' className='d-inline-flex w-100 info-pain'>
                                         <div className="form-input d-inline-flex w-100 py-4 w-responsive p-3">
                                             <div className='bg-white h-100 border-0'>
@@ -433,7 +424,7 @@ class ShopAccount extends Component {
                                                     <>
                                                         <form>
                                                             <label htmlFor="defaultFormCardNameEx" className="bin-label grey-text font-weight-light mb-1 pl-3">
-                                                                Товари
+                                                                Products
                                                             </label>
                                                         </form>
                                                         {this.state.Seen.map((product, index)=>(
@@ -462,14 +453,13 @@ class ShopAccount extends Component {
                                                         ))}
                                                     </>
                                                     :
-                                                    <h1 className="text-center font-small">Товари відсутні!</h1>
+                                                    <h1 className="text-center font-small">Basket empty!</h1>
                                                 }
                                             </div>
                                         </div>
                                     </div>
                                     <div className='shop-bin'>
-                                        <Link to='/shopOrder'><MDBBtn color="primary" className='btn-pay'>ОФОРМИТИ
-                                            ЗАМОВЛЕННЯ</MDBBtn>
+                                        <Link to='/shopOrder'><MDBBtn color="primary" className='btn-pay'>Place an order</MDBBtn>
                                         </Link>
                                     </div>
                                 </div>

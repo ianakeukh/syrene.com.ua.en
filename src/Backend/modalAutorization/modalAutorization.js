@@ -74,11 +74,11 @@ class ModalAutorization extends Component {
         this.setState({modalBody: where_to_go})
 
         if (where_to_go === 'authorization') {
-            this.setState({modalTitle: 'Авторизація'})
+            this.setState({modalTitle: 'Authorization'})
         } else if (where_to_go === 'registration') {
-            this.setState({modalTitle: 'Регистрація'})
+            this.setState({modalTitle: 'Registration'})
         } else if (where_to_go === 'forgetpassword') {
-            this.setState({modalTitle: 'Забули пароль'})
+            this.setState({modalTitle: 'Forgot password'})
         }
     }
 
@@ -97,7 +97,7 @@ class ModalAutorization extends Component {
                 changeModalBody={this.changeModalBody}
                 loginModalToggle={this.loginModalToggle}/>
         } else if (this.state.modalBody === 'successRgistration') {
-            return <div>Вы успешно зарегистрированы!</div>
+            return <div>You have been registrated!</div>
         } else {
             return <div>Error!</div>
         }
@@ -116,10 +116,10 @@ class ModalAutorization extends Component {
         if (user && this.state.showProfileMenu) {
             return (
                 <ul className="profile-menu">
-                    <li>Личный кабинет</li>
-                    <li>Заказы</li>
-                    <li>Избранное</li>
-                    <li onClick={this.logout}>Выход</li>
+                    <li>Personal account</li>
+                    <li>Orders</li>
+                    <li>Preferences</li>
+                    <li onClick={this.logout}>Log out</li>
                 </ul>
             )
         } else {

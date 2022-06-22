@@ -7,6 +7,7 @@ import PRIVAT from './CARD/PRIVAT'
 import LIQPAY from './CARD/LIQPAY'
 import VISA from './CARD/VISA'
 import SHIPMENT from './CARD/SHIPMENT'
+import GOOGLEPAY from './CARD/GOOGLEPAY'
 
 
 import {Link} from 'react-router-dom'
@@ -76,10 +77,10 @@ class ShopOrder extends Component  {
         return (
             <div className='rgba-purple-slight'>
                 <div className='container pb-5'>
-                    <h1 className='h1-responsive font-weight-bolder m-0 pt-2 py-xl-5 py-lg-5 py-md-5 py-sm-5 py-5 text-center'>Форма замовлення</h1>
-                    <p className='order-p w-75 justify-content-center m-auto text-center w-responsive pb-5'>Для оформлення онлайн-замовлення заповніть будь-ласка форму, яка наведена нижче. Після обробки заяки наш спеціаліст зв'яжеться з вами за номером телефону, який ви надаєте.</p>
+                    <h1 className='h1-responsive font-weight-bolder m-0 pt-2 py-xl-5 py-lg-5 py-md-5 py-sm-5 py-3 text-center'>Order form</h1>
+                    <p className='order-p w-75 justify-content-center m-auto text-center w-responsive pb-sm-5 pb-3'>To make an order fill please the form. Our manager will contact you as soon as possible.</p>
                     <MDBCard className='mt-xl-4 mt-lg-4 mt-md-2 mt-sm-3 mt-2 border-0 z-index-0 bg-transparent'>
-                        <p className='pl-2 pl-xl-4 pl-lg-4 pl-md-4 pl-sm-3 ml-5 font-weight-bold'>Ви замовили наступні товари:</p>
+                        <p className='pl-2 pl-xl-4 pl-lg-4 pl-md-4 pl-sm-3 ml-3 font-weight-bold'>You order the next products:</p>
                         <MDBRow className='ml-4 m-0 pt-xl-4 pt-lg-0 pt-md-0 pt-sm-0 pt-0'>
                             <div className=' justify-content-center  z-depth-0 p-0 m-0 border-bottom'>
                                 <div className='bg-white h-100 border-0 shop-order-goods p-4'>
@@ -87,7 +88,7 @@ class ShopOrder extends Component  {
                                         <>
                                             <form>
                                                 <label htmlFor="defaultFormCardNameEx" className="bin-label grey-text font-weight-light mb-1 pl-3">
-                                                    Товари
+                                                    Products
                                                 </label>
                                             </form>
                                             {this.state.Cart.map((product, index)=>(
@@ -104,8 +105,8 @@ class ShopOrder extends Component  {
                                                         </form>
                                                     </MDBCol>
                                                     <MDBCol className='col-5 col-md-2 col-sm-3 px-3 py-1 mx-0'>
-                                                        <p className='px-lg-2 px-xl-2 px-md-0 px-sm-2 px-2 py-3'>{product.price}<span>грн</span></p>
-                                                        <p className='px-lg-2 px-xl-2 px-md-0 px-sm-2 px-2 py-3'>{product.price * product.count}<span>грн</span></p>
+                                                        <p className='px-lg-2 px-xl-2 px-md-0 px-sm-2 px-2 py-3'>{product.price}<span> GBP</span></p>
+                                                        <p className='px-lg-2 px-xl-2 px-md-0 px-sm-2 px-2 py-3'>{product.price * product.count}<span> GBP</span></p>
                                                     </MDBCol>
                                                     <MDBCol className='col-like p-1 py-2'>
                                                         <button onClick={() => this.removeItemCart(index)} type="button" className="px-3 px-md-1 px-xl-3 px-lg-3 px-0 btn btn-m m-0 text-center bg-transparent border-0 z-depth-0 button-like">
@@ -116,109 +117,54 @@ class ShopOrder extends Component  {
                                             ))}
                                         </>
                                         :
-                                        <h1 className="text-center font-small">Корзина порожня!</h1>
+                                        <h1 className="text-center font-small">Basket empty!</h1>
                                     }
                                     <div>
                                         <MDBCol className='my-2 text-left order-price w-auto pr-0 w-100 pr-5 pb-5'>
-                                            <span className='font-weight-small font-smaller'>Разом до сплати:
+                                            <span className='font-weight-small font-smaller'>Total price:
                                                 {/*<span className='font-weight-small'>{this.props.appState.cart.total_price}</span>*/}
-                                                  <span>     грн</span></span>
+                                                  <span>    GBP</span></span>
                                         </MDBCol>
                                     </div>
                                 </div>
                             </div>
                         </MDBRow>
                     </MDBCard>
-                    <MDBCard className='mt-xl-4 mt-lg-4 mt-md-4 mt-sm-3 mt-2 border-0 z-index-0 bg-transparent'>
-                        <p className='pl-2 pl-xl-4 pl-lg-4 pl-md-4 pl-sm-3 ml-5 font-weight-bold'>Контактна інформація</p>
+                    <MDBCard className='mt-xl-4 mt-lg-4 mt-md-4 mt-sm-3 mt-4 border-0 z-index-0 bg-transparent'>
+                        <p className='pl-2 pl-xl-4 pl-lg-4 pl-md-4 pl-sm-3 ml-3 font-weight-bold'>Contact information</p>
                         <MDBRow className='m-0 pt-xl-4 pt-lg-0 pt-md-0 pt-sm-0 pt-0'>
-                            <MDBCol className='d-inline pr-0'>
-                                <MDBCol className='col-10 d-flex flex-column mb-3 pl-4 pr-xl-4 pr-lg-4 pr-md-4 pr-sm-4 pr-0'>
-                                    <label htmlFor="fname"><i className="fa fa-user"></i>Ім'я *</label>
-                                    <input className='w-100 order' type="text" id="fname" name="firstname" placeholder="Анастасія" />
+                            <MDBCol className='d-inline px-4 pr-0 col-12 col-sm-6'>
+                                <MDBCol className='w-100 m-0 col-12 d-flex flex-column mb-3 pl-0 pl-sm-3 pr-xl-4 pr-lg-4 pr-md-4 pr-sm-4 pr-0'>
+                                    <label htmlFor="fname"><i className="fa fa-user"></i>Name *</label>
+                                    <input className='w-100 order' type="text" id="fname" name="firstname" placeholder="Ann" />
                                 </MDBCol>
-                                <MDBCol className='col-10 d-flex  flex-column mb-3 pl-4 pr-xl-4 pr-lg-4 pr-md-4 pr-sm-4 pr-0'>
-                                    <label htmlFor="email"><i className="fa fa-user"></i>Фамілія *</label>
-                                    <input className='w-100 order' type="text" id="email" name="email" placeholder="Іванова" />
+                                <MDBCol className='w-100 m-0 col-12 d-flex flex-column mb-3 pl-0 pl-sm-3 pr-xl-4 pr-lg-4 pr-md-4 pr-sm-4 pr-0'>
+                                    <label htmlFor="email"><i className="fa fa-user"></i>Surname *</label>
+                                    <input className='w-100 order' type="text" id="email" name="email" placeholder="Gregor" />
                                 </MDBCol>
                             </MDBCol>
-                            <MDBCol className='d-inline pl-0'>
-                                <MDBCol className='col-10 d-flex flex-column mb-3 pr-4 pl-xl-4 pl-lg-4 pl-md-4 pl-sm-4 pl-0'>
+                            <MDBCol className='d-inline px-4 pr-0 col-12 col-sm-6'>
+                                <MDBCol className='w-100 m-0 col-12 d-flex flex-column mb-3 pl-0 pl-sm-0 pr-xl-4 pr-lg-4 pr-md-4 pr-sm-4 pr-0'>
+                                    <label htmlFor="email"><i className="fas fa-phone-alt"></i>Phone *</label>
+                                    <input className='w-100 order' type="text" id="email" name="" placeholder="+44 771-6134-163" />
+                                </MDBCol>
+                                <MDBCol className='w-100 m-0 col-12 d-flex flex-column mb-3 pl-0 pl-sm-0 pr-xl-4 pr-lg-4 pr-md-4 pr-sm-4 pr-0'>
                                     <label htmlFor="fname"><i className="far fa-envelope"></i>Email</label>
                                     <input className='w-100 order' type="text" id="fname" name="email" placeholder="john@example.com" />
-                                </MDBCol>
-                                <MDBCol className='col-10 d-flex  flex-column mb-3 pr-4 pl-xl-4 pl-lg-4 pl-md-4 pl-sm-4 pl-0'>
-                                    <label htmlFor="email"><i className="fas fa-map-marked-alt"></i>Місто</label>
-                                    <input className='w-100 order' type="text" id="email" name="city" placeholder="Київ" />
-                                </MDBCol>
-                            </MDBCol>
-                        </MDBRow>
-                        <MDBRow className='m-0 pt-0 pb-xl-4 pb-lg-0 pb-md-0 pb-sm-0 pb-0'>
-                            <MDBCol className='d-inline pr-0'>
-                                <MDBCol className='col-10 d-flex flex-column mb-3 pl-4 pr-xl-4 pr-lg-4 pr-md-4 pr-sm-4 pr-0'>
-                                    <label htmlFor="fname"><i className="fa fa-user"></i>По-батькові</label>
-                                    <input className='w-100 order' type="text" id="fname" name="firstname" placeholder="Віталіївна" />
-                                </MDBCol>
-                                <MDBCol className='col-10 d-flex  flex-column mb-3 pl-4 pr-xl-4 pr-lg-4 pr-md-4 pr-sm-4 pr-0'>
-                                    <label htmlFor="email"><i className="fas fa-phone-alt"></i>Телефон *</label>
-                                    <input className='w-100 order' type="text" id="email" name="" placeholder="+380671010109" />
-                                </MDBCol>
-                            </MDBCol>
-                            <MDBCol className='d-inline pl-0'>
-                                <MDBCol className='col-10 d-flex flex-column mb-3 pr-4 pl-xl-4 pl-lg-4 pl-md-4 pl-sm-4 pl-0'>
-                                    <label htmlFor="adr"><i className="fas fa-map-marker-alt"></i>Вулиця</label>
-                                    <input className='w-100 order' type="text" id="adr" name="address" placeholder="вулиця Данченко" />
-                                </MDBCol>
-                                <MDBCol className='col-10 d-flex  flex-column mb-3 pr-4 pl-xl-4 pl-lg-4 pl-md-4 pl-sm-4 pl-0'>
-                                    <label htmlFor="city"><i className="fas fa-house-user"></i>Будинок</label>
-                                    <input className='w-100 order' type="text" id="city" name="address" placeholder="32" />
                                 </MDBCol>
                             </MDBCol>
                         </MDBRow>
                     </MDBCard>
                     <MDBCard className='mt-xl-2 mt-lg-2 mt-md-2 mt-sm-3 mt-2 border-0 z-index-0 bg-transparent'>
                         <MDBRow className='m-0 py-xl-4 py-lg-0 py-md-0 py-sm-0 py-0 flex-column'>
-                            <p className='font-weight-bold  pl-2 pl-xl-4 pl-lg-4 pl-md-4 pl-sm-3 ml-5 font-weight-bold'>Спосіб доставки</p>
-                            <p className='pl-2 pl-xl-4 pl-lg-4 pl-md-4 pl-sm-3 ml-5'>Оберіть найзручніший для Вас спосіб доставки</p>
+                            <p className='font-weight-bold  pl-2 pl-xl-4 pl-lg-4 pl-md-4 pl-sm-3 ml-3 font-weight-bold'>Delivery method</p>
+                            <p className='pl-2 pl-xl-4 pl-lg-4 pl-md-4 pl-sm-3 ml-3'>Choose the most convenient delivery method for you</p>
                             <SHIPMENT />
-                            <p className='blue-grey-ic text-wrap font-smaller pl-2 pl-xl-4 pl-lg-4 pl-md-4 pl-sm-3 ml-5 pt-4'>Як тільки ми отримаємо заявку на замовлення, одразу ж відправляємо товари на вказану Вами адресу. Після того, як товар прибуде на відділення, Вам обов'язково прийде повідомлення. Обіцяємо реалізувати замовлення якісно та швидко.</p>
+                            <p className='blue-grey-ic text-wrap font-smaller pl-2 pl-xl-4 pl-lg-4 pl-md-4 pl-sm-3 ml-3 pt-4'>As soon as we will get an order, we will send you products quickly and safety.</p>
                         </MDBRow>
                     </MDBCard>
-                    <MDBCard className='mt-xl-2 mt-lg-2 mt-md-2 mt-sm-3 mt-2 pb-0 border-0 z-index-0 bg-transparent'>
-                        <MDBRow className='m-0 py-xl-4 py-lg-0 py-md-0 py-sm-0 py-0 flex-column'>
-                            <p className='font-weight-bold  pl-2 pl-xl-4 pl-lg-4 pl-md-4 pl-sm-3 ml-5 font-weight-bold'>Інформація про оплату товарів</p>
-                            <p className='pl-2 pl-xl-4 pl-lg-4 pl-md-4 pl-sm-3 ml-5'>Оберість найзручніший для Вас спосіб оплати. Оплату можливо здійснити наступним чином: </p>
-                            <MDBCol className='pl-5'>
-                                <div className="custom-control custom-radio ml-1 my-2">
-                                    <MDBInput onClick={this.onClick=(1)} checked={this.state.radio===1 ? true : false} label="Оплата при отриманні товару готівкою кур'єру" type='radio' id='radio1' />
-                                </div>
-                                <div className="custom-control custom-radio ml-1 my-2">
-                                    <MDBInput onClick={this.onClick=(2)} checked={this.state.radio===2 ? true : false} label="Оплата наложеним платежем (оплатіть при отриманні замовлення)"  type="radio" id="radio2"/>
-                                </div>
-                                <div className="custom-control custom-radio ml-1 my-2">
-                                    <MDBInput onClick={this.toggleCollapse("basicCollapse")} checked={this.state.radio===3 ? true : false} label="Оплата картою Visa/Mastercard" type="radio" id="radio3"/>
-                                </div>
-                                <MDBCollapse id="basicCollapse" isOpen={this.state.collapseID}>
-                                    <VISA />
-                                </MDBCollapse>
-                                <div className="custom-control custom-radio ml-1 my-2">
-                                    <MDBInput onClick={this.toggleCollapse("basicCollapse")} checked={this.state.radio===4 ? true : false} label="Оплата GooglePay" type="radio" id="radio4"/>
-                                </div>
-                                <MDBCollapse id="basicCollapse" isOpen={this.state.collapseID}>
-                                    <LIQPAY />
-                                </MDBCollapse>
-                                <div className="custom-control custom-radio ml-1 my-2">
-                                    <MDBInput onClick={this.onClick=(5)} checked={this.state.radio===5 ? true : false} label="Оплата Privat24" type="radio" id="radio5"/>
-                                </div>
-                                <MDBCollapse id="basicCollapse" isOpen={this.state.collapseID}>
-                                    <PRIVAT />
-                                </MDBCollapse>
-                            </MDBCol>
-                                <p className='blue-grey-ic text-wrap font-smaller pl-2 pl-xl-4 pl-lg-4 pl-md-4 pl-sm-3 ml-5 pt-4'>Внесені Вами дані збережено успішно. Поставте галочку давши згоду на обробку персональних даних та натисніть на кнопку замовити. Після того, як ми отримаємо Ваше замовлення, ми зв'яжемось із Вами. Дякуэмо за замовлення!</p>
-                        </MDBRow>
-                    </MDBCard>
-                    <MDBCard className='mt-0 border-0 z-index-0 bg-transparent pb-5'>
-                        <MDBRow className='pl-1 ml-5 m-0 pt-0'>
+                    <MDBCard className='mt-0 border-0 z-index-0 bg-transparent pb-sm-5 pb-0'>
+                        <MDBRow className='pl-1 ml-0 m-0 pt-0'>
                             <div className='d-inline-block mt-4 w-100'>
                                 <div className='private-policy-text mb-0'>
                                     <MDBInput
@@ -229,21 +175,16 @@ class ShopOrder extends Component  {
                                         label=""
                                         className="p-2 ml-1"
                                     />
-                                    <p className="pr-3 pl-2 pl-xl-4 pl-lg-4 pl-md-4 pl-sm-3 ml-5 d-inline-flex private-policy w-75">Я ознайомлений з правилами та даю згоду на обробку персональних данних згідно положень Політики Конфіденційності</p>
+                                    <p className="pb-0 pr-3 pl-2 pl-xl-4 pl-lg-4 pl-md-4 pl-sm-3 ml-5 d-inline-flex private-policy w-75">Я ознайомлений з правилами та даю згоду на обробку персональних данних згідно положень Політики Конфіденційності</p>
                                 </div>
                             </div>
                         </MDBRow>
                     </MDBCard>
-                    <form method="POST" className='justify-content-center m-auto pb-5' action="https://www.liqpay.ua/api/3/checkout"
-                          accept-charset="utf-8">
-                        <input type="hidden" className="w-100" name="data" value="eyAidmVyc2lvbiIgOiAzLCAicHVibGljX2tleSIgOiAieW91cl9wdWJsaWNfa2V5IiwgImFjdGlvbiIgOiAicGF5IiwgImFtb3VudCIgOiAxLCAiY3VycmVuY3kiIDogIlVTRCIsICJkZXNjcmlwdGlvbiIgOiAiZGVzY3JpcHRpb24gdGV4dCIsICJvcmRlcl9pZCIgOiAib3JkZXJfaWRfMSIgfQ=="/>
-                        <input type="hidden" className='w-100' name="signature" value="QvJD5u9Fg55PCx/Hdz6lzWtYwcI="/>
-                        <div className='shop-bin'>
-                            <Link to='/shopOrder'><MDBBtn color="primary" className='btn-pay'>
-                                ЗАМОВИТИ</MDBBtn>
-                            </Link>
-                        </div>
-                    </form>
+                    <div className='shop-bin px-4'>
+                        <Link to='/shopPayment'><MDBBtn color="primary" className='btn-pay'>
+                            ORDER</MDBBtn>
+                        </Link>
+                    </div>
                 </div>
             </div>
         )

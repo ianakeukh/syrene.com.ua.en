@@ -29,7 +29,7 @@ class ShopContacts extends Component {
         return (
             <div>
                 <div className='container'>
-                    <h4 className='h4-responsive text-center font-weight-bolder m-0 py-md-5 py-sm-5 py-4 py-xl-5 py-lg-5'>КОНТАКТИ</h4>
+                    <h4 className='h4-responsive text-center font-weight-bolder m-0 py-md-5 py-sm-5 py-4 py-xl-5 py-lg-5'>CONTACTS</h4>
                     <MDBCard className='border-0 laptop-v-block d-block m-0'>
                         <div className="text-center h-100 black-text px-3">
                             <ul className="text-lg-left list-unstyled ml-0">
@@ -37,8 +37,7 @@ class ShopContacts extends Component {
                                     <p className="text-center contact-text">
                                         <a href='https://goo.gl/maps/bzk1W5AZCec4QVR89' className='black-ic'>
                                             <MDBIcon icon="map-marker-alt" className="pr-3"/>
-                                            м. Київ, вулиця Данченко 32,
-                                            (вхід з двору)
+                                            United Kingdom, Brighton
                                         </a>
                                     </p>
                                 </li>
@@ -46,23 +45,15 @@ class ShopContacts extends Component {
                                     <p className="text-center contact-text">
                                         <a href='#' className='black-ic'>
                                             <MDBIcon icon="clock" className="pr-3"/>
-                                            Графік роботи: 09:00-20:00 (без вихідних)
+                                            Work hours: 09:00-20:00
                                         </a>
                                     </p>
                                 </li>
                                 <li>
                                     <p href='#' className="text-center contact-text" >
-                                        <a href='tel:+380735005533' className='black-ic'>
+                                        <a href='tel:+447716134163' classname="black-ic">
                                             <MDBIcon icon="phone" className="pr-3"/>
-                                            +38 073 500 55 33
-                                        </a>
-                                    </p>
-                                </li>
-                                <li>
-                                    <p className="text-center contact-text" >
-                                        <a href='tel:+380985005533' className='black-ic'>
-                                            <MDBIcon icon="phone" className="pr-3"/>
-                                            +38 098 500 55 33
+                                            +44 77-16-1341-63
                                         </a>
                                     </p>
                                 </li>
@@ -70,7 +61,7 @@ class ShopContacts extends Component {
                                     <p  className="contact-text text-center justify-content-center">
                                         <a href='https://www.instagram.com/yvonnemultibrands/' className='black-ic'>
                                             <MDBIcon fab icon="instagram" className='pr-3'/>
-                                            yvonnemultibrands
+                                            syrenecosmeticsbrands
                                         </a>
                                     </p>
                                 </li>
@@ -110,32 +101,25 @@ class ShopContacts extends Component {
                                             <li>
                                                 <p className="text-center contact-text mb-0">
                                                     <MDBIcon icon="map-marker-alt" className="pr-3"/>
-                                                    м. Київ, вулиця Данченко 32,
-                                                    (вхід з двору)
+                                                    United Kingdom, Brighton
                                                 </p>
                                             </li>
                                             <li>
                                                 <p className="text-center contact-text mb-0">
                                                     <MDBIcon icon="clock" className="pr-3"/>
-                                                    Графік роботи: 09:00-20:00 (без вихідних)
+                                                    Work hours: 09:00-20:00
                                                 </p>
                                             </li>
                                             <li>
                                                 <p className="text-center contact-text mb-0">
                                                     <MDBIcon icon="phone" className="pr-3"/>
-                                                    +38 073 500 55 33
-                                                </p>
-                                            </li>
-                                            <li>
-                                                <p className="text-center contact-text mb-0">
-                                                    <MDBIcon icon="phone" className="pr-3"/>
-                                                    +38 098 500 55 33
+                                                    +44 77 163 14 163
                                                 </p>
                                             </li>
                                             <li className='text-center justify-content-center mb-0'>
                                                 <a href='https://www.instagram.com/yvonne__salon/?r=nametag' className="contact-text text-center justify-content-center">
                                                     <MDBIcon fab icon="instagram" className='pr-3'/>
-                                                    yvonne__salon
+                                                    serenecosmeticsbrands
                                                 </a>
                                             </li>
                                         </ul>

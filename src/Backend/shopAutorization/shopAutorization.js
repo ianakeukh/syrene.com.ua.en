@@ -53,7 +53,7 @@ function doLogin(_this){
             localStorage.setItem('token', data.token);
             window.location.reload();
         }else{
-            _this.setState({alert:'Неверный логин или пароль'})
+            _this.setState({alert:'Uncorrect login and password'})
             if(data.errors) _this.setState({errors: _this.getErrorsList(data.errors)})
         }
     });
@@ -114,16 +114,16 @@ class ShopAutorization extends Component  {
                                 <p style={{color:'red'}}>
                                     {this.state.alert}
                                 </p>
-                                <input onChange={this.changeEmailHandler} value={this.state.form.email} type='email' className="mx-auto justify-content-center form-control mb-4 form-reg" placeholder="Електронна пошта" />
-                                <input onChange={this.changePasswordHandler} value={this.state.form.password} type='password' className="mx-auto justify-content-center form-control mb-2 mb-sm-4 form-reg" placeholder="Пароль" />
+                                <input onChange={this.changeEmailHandler} value={this.state.form.email} type='email' className="mx-auto justify-content-center form-control mb-4 form-reg" placeholder="Email" />
+                                <input onChange={this.changePasswordHandler} value={this.state.form.password} type='password' className="mx-auto justify-content-center form-control mb-2 mb-sm-4 form-reg" placeholder="Password" />
                                 <div className="d-flex justify-content-around">
                                      <div>
-                                        <a href="#" onClick={ this.goToForgot } className='py-0 form-text'>Забули пароль?</a>
+                                        <a href="#" onClick={ this.goToForgot } className='py-0 form-text'>Forgot password!</a>
                                     </div>
                                 </div>
-                                <button onClick={this.loginSubmit} className="btn btn-reg font-weight-bold mx-0 mx-sm-0 my-sm-4 my-2 w-100" type="button">Авторизація</button>
-                                <p>Ще не зареєстровані?
-                                    <a href="#" onClick={this.goToRegistration} className='pl-3' >Зареєструватись</a>
+                                <button onClick={this.loginSubmit} className="btn btn-reg font-weight-bold mx-0 mx-sm-0 my-sm-4 my-2 w-100" type="button">Authorisation</button>
+                                <p>You are not registered yet?
+                                    <a href="#" onClick={this.goToRegistration} className='pl-3' >Register</a>
                                 </p>
                             </form>
                         </div>
